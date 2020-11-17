@@ -7,35 +7,32 @@ import { Actions } from '@paljs/ui/Actions';
 import ContextMenu from '@paljs/ui/ContextMenu';
 import User from '@paljs/ui/User';
 import { breakpointDown } from '@paljs/ui/breakpoints';
-import { InputGroup } from '@paljs/ui/Input';
-import { EvaIcon } from '@paljs/ui/Icon';
-
-const InputStyled = styled(InputGroup)`
-  margin: auto;
-`;
+import Search from 'components/Search';
 
 const HeaderStyle = styled.div`
   display: flex;
   width: 100%;
   justify-content: space-between;
   ${breakpointDown('sm')`
-    .right{
+    .input {
       display: none;
     }
   `}
   .right > div {
     height: auto;
     display: flex;
+    white-space: nowrap;
     align-content: center;
   }
-  .logo {
-    font-size: 1.35rem;
-    white-space: nowrap;
-    text-decoration: none;
-  }
-  .left {
+  .left > div {
     display: flex;
     align-items: center;
+  }
+  .logo {
+    font-family: Montserrat, sans-serif;
+    font-size: 1.25rem;
+    white-space: nowrap;
+    text-decoration: none;
   }
 `;
 
@@ -47,13 +44,8 @@ const Header: React.FC<unknown> = () => {
       <HeaderStyle>
         <Actions
           size="Medium"
+          className="left"
           actions={[
-            {
-              icon: { name: 'menu-outline' },
-              url: {
-                onClick: () => void {},
-              },
-            },
             {
               content: (
                 <Link href="/">
@@ -62,12 +54,7 @@ const Header: React.FC<unknown> = () => {
               ),
             },
             {
-              content: (
-                <InputStyled fullWidth status="Info" size="Small">
-                  <EvaIcon name="search" />
-                  <input type="text" placeholder="Size Small" />
-                </InputStyled>
-              ),
+              content: <Search />,
             },
           ]}
         />
@@ -75,20 +62,6 @@ const Header: React.FC<unknown> = () => {
           size="Small"
           className="right"
           actions={[
-            {
-              content: (
-                <Link href="/">
-                  <a> FAQ </a>
-                </Link>
-              ),
-            },
-            {
-              content: (
-                <Link href="/">
-                  <a> ヘルプ </a>
-                </Link>
-              ),
-            },
             {
               content: (
                 <ContextMenu
