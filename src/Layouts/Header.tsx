@@ -7,6 +7,7 @@ import { Actions } from '@paljs/ui/Actions';
 import ContextMenu from '@paljs/ui/ContextMenu';
 import User from '@paljs/ui/User';
 import { breakpointDown } from '@paljs/ui/breakpoints';
+import Logo from 'components/Logo';
 import Search from 'components/Search';
 
 const HeaderStyle = styled.div`
@@ -28,12 +29,6 @@ const HeaderStyle = styled.div`
     display: flex;
     align-items: center;
   }
-  .logo {
-    font-family: Montserrat, sans-serif;
-    font-size: 1.25rem;
-    white-space: nowrap;
-    text-decoration: none;
-  }
 `;
 
 const Header: React.FC<unknown> = () => {
@@ -47,11 +42,7 @@ const Header: React.FC<unknown> = () => {
           className="left"
           actions={[
             {
-              content: (
-                <Link href="/">
-                  <a className="logo"> STARMIE </a>
-                </Link>
-              ),
+              content: <Logo />,
             },
             {
               content: <Search />,
