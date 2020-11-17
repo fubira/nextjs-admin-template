@@ -1,11 +1,14 @@
 import React, { useEffect } from 'react';
-import { useRouter } from 'next/router';
+// import { useRouter } from 'next/router';
+import PageLayout from 'Layouts/PageLayout';
 
 export default function Index() {
-  const router = useRouter();
+  // const router = useRouter();
   useEffect(() => {
-    router.push('/extra-components/accordion');
+    // router.push('/');
   }),
     [];
-  return <div />;
+
+  return <PageLayout title="Landing" />;
+  // return <div />;
 }

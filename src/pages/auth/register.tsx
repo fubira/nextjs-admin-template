@@ -6,7 +6,7 @@ import styled from 'styled-components';
 import Link from 'next/link';
 
 import Auth from 'components/Auth';
-import Layout from 'Layouts';
+import Layout from 'Layouts/UserLayout';
 import Socials from 'components/Auth/Socials';
 
 const Input = styled(InputGroup)`

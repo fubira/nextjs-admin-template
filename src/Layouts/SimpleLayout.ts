@@ -5,9 +5,11 @@ import { breakpointDown } from '@paljs/ui/breakpoints';
 const SimpleLayout = createGlobalStyle`
 ${({ theme }) => css`
   ${GlobalStyle}
+
   html {
     font-size: 16px;
   }
+
   .column.small {
     flex: 0.15 !important;
   }

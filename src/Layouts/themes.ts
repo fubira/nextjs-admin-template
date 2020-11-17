@@ -3,13 +3,12 @@ import { DefaultTheme } from 'styled-components';
 
 const shared: Partial<DefaultTheme> = {
   sidebarHeaderGap: '2rem',
-  fontFamilyPrimary: `-apple-system,BlinkMacSystemFont,
-          "Segoe UI",Roboto,"Helvetica Neue",
-          Arial,sans-serif,"Apple Color Emoji",
-          "Segoe UI Emoji","Segoe UI Symbol"`,
+  fontFamilyPrimary: `-apple-system, BlinkMacSystemFont,
+          Montserrat, "Helvetica Neue", Arial, sans-serif,
+          "Apple Color Emoji", "Segoe UI Emoji","Segoe UI Symbol"`,
 };
 
-export default function themeService(theme: DefaultTheme['name'], dir: 'ltr' | 'rtl') {
+export default function themeService(theme: DefaultTheme['name'], dir: 'ltr' | 'rtl' = 'ltr') {
   switch (theme) {
     case 'dark':
     case 'cosmic':

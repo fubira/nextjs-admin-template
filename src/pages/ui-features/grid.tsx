@@ -5,7 +5,7 @@ import Col from '@paljs/ui/Col';
 import styled, { css } from 'styled-components';
 import React from 'react';
 
-import Layout from 'Layouts';
+import Layout from 'Layouts/UserLayout';
 
 interface BoxProps {
   nested?: boolean;

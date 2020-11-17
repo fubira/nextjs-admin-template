@@ -4,7 +4,7 @@ import Row from '@paljs/ui/Row';
 import Col from '@paljs/ui/Col';
 import React, { useState } from 'react';
 
-import Layout from 'Layouts';
+import Layout from 'Layouts/UserLayout';
 import defaultMessages from 'components/messages';
 
 export default function ChatPage() {

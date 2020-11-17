@@ -6,7 +6,7 @@ import Link from 'next/link';
 
 import Auth, { Group } from 'components/Auth';
 import Socials from 'components/Auth/Socials';
-import Layout from 'Layouts';
+import Layout from 'Layouts/UserLayout';
 
 export default function Login() {
   const onCheckbox = () => {

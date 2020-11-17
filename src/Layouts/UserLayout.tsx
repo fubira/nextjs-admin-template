@@ -25,7 +25,6 @@ const getDefaultTheme = (): DefaultTheme['name'] => {
 
 const LayoutPage: React.FC<SEOProps> = ({ children, ...rest }) => {
   const [theme, setTheme] = useState<DefaultTheme['name']>('default');
-  const [dir, setDir] = useState<'ltr' | 'rtl'>('ltr');
   const sidebarRef = useRef<SidebarRefObject>(null);
   const router = useRouter();
   const [menuState, setMenuState] = useState(false);
@@ -36,11 +35,6 @@ const LayoutPage: React.FC<SEOProps> = ({ children, ...rest }) => {
     setSeeHeader(state !== 'compacted');
   };
 
-  const changeTheme = (newTheme: DefaultTheme['name']) => {
-    setTheme(newTheme);
-    typeof localStorage !== 'undefined' && localStorage.setItem('theme', newTheme);
-  };
-
   useEffect(() => {
     const localTheme = getDefaultTheme();
     if (localTheme !== theme && theme === 'default') {
@@ -48,28 +42,16 @@ const LayoutPage: React.FC<SEOProps> = ({ children, ...rest }) => {
     }
   }, []);
 
-  const changeDir = () => {
-    const newDir = dir === 'ltr' ? 'rtl' : 'ltr';
-    setDir(newDir);
-  };
-
   const authLayout = router.pathname.startsWith('/auth');
 
   return (
     <Fragment>
       <SEO {...rest} />
-      <ThemeProvider theme={themes(theme, dir)}>
+      <ThemeProvider theme={themes(theme)}>
         <Fragment>
           <SimpleLayout />
-          <Layout evaIcons={icons} dir={dir} className={!authLayout ? 'auth-layout' : ''}>
-            {!authLayout && (
-              <Header
-                dir={dir}
-                changeDir={changeDir}
-                theme={{ set: changeTheme, value: theme }}
-                toggleSidebar={() => sidebarRef.current?.toggle()}
-              />
-            )}
+          <Layout evaIcons={icons} className={!authLayout ? 'auth-layout' : ''}>
+            {!authLayout && <Header />}
             <LayoutContainer>
               {!authLayout && (
                 <Sidebar
