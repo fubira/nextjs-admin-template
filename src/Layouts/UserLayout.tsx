@@ -12,7 +12,7 @@ import { Button } from '@paljs/ui/Button';
 import { Menu, MenuRefObject } from '@paljs/ui/Menu';
 import Link from 'next/link';
 import menuItems from './menuItem';
-import SEO, { SEOProps } from 'components/SEO';
+import HtmlHead, { HtmlHeadProps } from 'components/HtmlHead';
 
 const getDefaultTheme = (): DefaultTheme['name'] => {
   if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
@@ -23,7 +23,7 @@ const getDefaultTheme = (): DefaultTheme['name'] => {
   }
 };
 
-const LayoutPage: React.FC<SEOProps> = ({ children, ...rest }) => {
+const LayoutPage: React.FC<HtmlHeadProps> = ({ children, ...rest }) => {
   const [theme, setTheme] = useState<DefaultTheme['name']>('default');
   const sidebarRef = useRef<SidebarRefObject>(null);
   const router = useRouter();
@@ -46,7 +46,7 @@ const LayoutPage: React.FC<SEOProps> = ({ children, ...rest }) => {
 
   return (
     <Fragment>
-      <SEO {...rest} />
+      <HtmlHead {...rest} />
       <ThemeProvider theme={themes(theme)}>
         <Fragment>
           <SimpleLayout />

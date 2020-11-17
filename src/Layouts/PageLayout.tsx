@@ -6,13 +6,13 @@ import icons from '@paljs/icons';
 import Header from './Header';
 import SimpleLayout from './SimpleLayout';
 import { useRouter } from 'next/router';
-import SEO, { SEOProps } from 'components/SEO';
+import HtmlHead, { HtmlHeadProps } from 'components/HtmlHead';
 
 const getDefaultTheme = (): DefaultTheme['name'] => {
   return localStorage.getItem('theme') as DefaultTheme['name'];
 };
 
-const LayoutPage: React.FC<SEOProps> = ({ children, ...rest }) => {
+const LayoutPage: React.FC<HtmlHeadProps> = ({ children, ...rest }) => {
   const [theme, setTheme] = useState<DefaultTheme['name']>('default');
 
   useEffect(() => {
@@ -27,7 +27,7 @@ const LayoutPage: React.FC<SEOProps> = ({ children, ...rest }) => {
 
   return (
     <Fragment>
-      <SEO {...rest} />
+      <HtmlHead {...rest} />
       <ThemeProvider theme={themes(theme)}>
         <Fragment>
           <SimpleLayout />
