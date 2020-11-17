@@ -7,10 +7,11 @@ import { Actions } from '@paljs/ui/Actions';
 import ContextMenu from '@paljs/ui/ContextMenu';
 import User from '@paljs/ui/User';
 import { breakpointDown } from '@paljs/ui/breakpoints';
-import Logo from 'components/Logo';
-import Search from 'components/Search';
 
-const HeaderStyle = styled.div`
+import Logo from '../Logo';
+import SearchInput from '../SearchInput';
+
+const FloatingHeaderStyle = styled.div`
   display: flex;
   width: 100%;
   justify-content: space-between;
@@ -31,12 +32,12 @@ const HeaderStyle = styled.div`
   }
 `;
 
-const Header: React.FC<unknown> = () => {
+const FloatingHeader: React.FC<unknown> = () => {
   const router = useRouter();
 
   return (
     <LayoutHeader fixed>
-      <HeaderStyle>
+      <FloatingHeaderStyle>
         <Actions
           size="Medium"
           className="left"
@@ -45,7 +46,7 @@ const Header: React.FC<unknown> = () => {
               content: <Logo />,
             },
             {
-              content: <Search />,
+              content: <SearchInput />,
             },
           ]}
         />
@@ -66,14 +67,21 @@ const Header: React.FC<unknown> = () => {
                   ]}
                   Link={Link}
                 >
-                  <User image="url('/avatar/avatar-04.png')" name="テストユーザ" title="一般会員" size="Medium" />
+                  <User
+                    image="url('/avatar/avatar-04.png')"
+                    color="#440088"
+                    shape="SemiRound"
+                    name="テストユーザ"
+                    title="一般会員"
+                    size="Medium"
+                  />
                 </ContextMenu>
               ),
             },
           ]}
         />
-      </HeaderStyle>
+      </FloatingHeaderStyle>
     </LayoutHeader>
   );
 };
-export default Header;
+export default FloatingHeader;
