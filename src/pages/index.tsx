@@ -6,11 +6,9 @@ import styled from 'styled-components';
 import { breakpointUp } from '@paljs/ui/breakpoints';
 
 const HeroContentStyle = styled.div`
-  margin-left: 5%;
-  margin-right: auto;
-  max-width: 50%;
-
-  width: 100%;
+  margin: 0 auto;
+  width: 90%;
+  max-width: 1000px;
 
   padding-top: 90px;
   padding-bottom: 100px;
@@ -55,6 +53,7 @@ const HeroContentStyle = styled.div`
     ${breakpointUp('lg')` font-size: 20px; `}
   }
 `;
+
 export default function Index() {
   // const router = useRouter();
   useEffect(() => {
