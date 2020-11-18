@@ -17,7 +17,7 @@ const SearchStyle = styled.div`
   justify-content: center;
 
   input {
-    padding: 0.25rem 0.5rem;
+    padding: 0.25rem 0.75rem;
     border: none;
     background-color: none;
   }
@@ -27,7 +27,7 @@ const SearchStyle = styled.div`
 
   .icon {
     margin: auto;
-    margin-left: 0.25rem;
+    margin-left: 0.5rem;
   }
 
   .right > div {
@@ -51,7 +51,7 @@ const Header: React.FC<unknown> = () => {
     <SearchStyle>
       <InputStyled className="input" fullWidth size="Small">
         <EvaIcon className="icon" name="search" />
-        <input type="text" placeholder="キーワードで検索" />
+        <input type="text" placeholder="キーワードでさがす" />
       </InputStyled>
     </SearchStyle>
   );

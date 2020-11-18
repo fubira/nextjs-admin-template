@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect, Fragment } from 'react';
 import { DefaultTheme, ThemeProvider } from 'styled-components';
-import themes from './themes';
+import themes from '../themes';
 import { Layout, LayoutContent, LayoutFooter, LayoutContainer, LayoutColumns, LayoutColumn } from '@paljs/ui/Layout';
 import icons from '@paljs/icons';
 import { SidebarBody, SidebarRefObject, Sidebar } from '@paljs/ui/Sidebar';
@@ -10,9 +10,9 @@ import { EvaIcon } from '@paljs/ui/Icon';
 import { Button } from '@paljs/ui/Button';
 import { Menu, MenuRefObject } from '@paljs/ui/Menu';
 import Link from 'next/link';
-import menuItems from './menuItem';
-import HtmlHead, { HtmlHeadProps } from '../components/HtmlHead';
-import FloatingHeader from '../components/FloatingHeader';
+import menuItems from '../menuItem';
+import HtmlHead, { HtmlHeadProps } from './HtmlHead';
+import StickyHeader from './StickyHeader';
 
 const getDefaultTheme = (): DefaultTheme['name'] => {
   if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
@@ -51,7 +51,7 @@ const LayoutPage: React.FC<HtmlHeadProps> = ({ children, ...rest }) => {
         <Fragment>
           <SimpleLayout />
           <Layout evaIcons={icons} className={!authLayout ? 'auth-layout' : ''}>
-            {!authLayout && <FloatingHeader />}
+            {!authLayout && <StickyHeader />}
             <LayoutContainer>
               {!authLayout && (
                 <Sidebar

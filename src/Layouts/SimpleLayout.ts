@@ -1,26 +1,19 @@
 import { createGlobalStyle, css } from 'styled-components';
 import GlobalStyle from '@paljs/ui/GlobalStyle';
-import { breakpointDown } from '@paljs/ui/breakpoints';
 
 const SimpleLayout = createGlobalStyle`
 ${({ theme }) => css`
   ${GlobalStyle}
 
-  html {
+  body {
     font-size: 16px;
+    font-smoothing: antialiased;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smooting: grayscale;
   }
 
   .column.small {
     flex: 0.15 !important;
-  }
-
-  .auth-layout {
-    .main-content {
-      padding: 2.5rem;
-      ${breakpointDown('sm')`
-        padding: 0;
-      `}
-    }
   }
 
   aside.settings-sidebar {
@@ -53,11 +46,9 @@ ${({ theme }) => css`
     }
   }
 
-  ${breakpointDown('xs')`
-    .main-content {
-        padding: 0.75rem !important;
-      }
-  `}
+  .main-content {
+    padding: 0 !important;
+  }
 
   .with-margin {
     margin: 0 0.75rem 2rem 0;
