@@ -46,6 +46,10 @@ ${({ theme }) => css`
     }
   }
 
+  .content-width {
+    max-width: 1000px;
+  }
+
   .main-content {
     padding: 0 !important;
   }

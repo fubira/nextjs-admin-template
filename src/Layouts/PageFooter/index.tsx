@@ -100,11 +100,15 @@ const actionItems: ActionType[] = [
   },
 ];
 
-const PageFooter: React.FC<unknown> = () => {
+export interface PageFooterProps {
+  className?: string;
+}
+
+const PageFooter: React.FC<PageFooterProps> = ({ className }) => {
   const menuRef = useRef<MenuRefObject>(null);
 
   return (
-    <PageFooterStyle>
+    <PageFooterStyle className={className}>
       <LayoutFooter>
         <BlockStyle>
           <MenuStyle>

@@ -29,13 +29,14 @@ const HeroChildrenStyle = styled.div`
   position: relative;
 `;
 
-interface TopImageProps {
+interface HeroProps {
+  className?: string;
   src?: string;
 }
 
-const Hero: React.FC<TopImageProps> = ({ src, children }) => {
+const Hero: React.FC<HeroProps> = ({ className, src, children }) => {
   return (
-    <HeroStyle>
+    <HeroStyle className={className}>
       <HeroPictureStyle>
         <picture>
           <img src={src} />

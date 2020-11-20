@@ -37,11 +37,15 @@ const HeaderStyle = styled.div`
   `}
 `;
 
-const StickyHeader: React.FC<unknown> = () => {
+export interface StickyHeaderProps {
+  className?: string;
+}
+
+const StickyHeader: React.FC<StickyHeaderProps> = ({ className }) => {
   const router = useRouter();
 
   return (
-    <StickyHeaderStyle>
+    <StickyHeaderStyle className={className}>
       <LayoutHeader>
         <HeaderStyle>
           <Actions
@@ -49,7 +53,7 @@ const StickyHeader: React.FC<unknown> = () => {
             className="left"
             actions={[
               {
-                content: <Logo />,
+                content: <Logo title="STARMIE" />,
               },
               {
                 content: <SearchInput />,

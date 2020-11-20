@@ -3,19 +3,30 @@ import Link from 'next/link';
 import styled from 'styled-components';
 
 const LogoStyle = styled.div`
-  font-family: Montserrat, sans-serif;
-  font-size: 1.32rem;
-  white-space: nowrap;
+  span {
+    height: 1.1em;
+    font-family: Montserrat, sans-serif;
+    font-size: 1.42rem;
+    font-weight: 700;
+    white-space: nowrap;
+  }
+
   a {
     text-decoration: none;
   }
 `;
 
-const Logo: React.FC<unknown> = () => {
+interface LogoProps {
+  className?: string;
+  href?: string;
+  title?: string;
+}
+
+const Logo: React.FC<LogoProps> = ({ className, href, img, title }) => {
   return (
-    <LogoStyle>
-      <Link href="/">
-        <a> STARMIE </a>
+    <LogoStyle className={className}>
+      <Link href={href || '/'}>
+        <a> {title && <span>{title}</span>} </a>
       </Link>
     </LogoStyle>
   );
