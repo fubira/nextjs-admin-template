@@ -1,7 +1,15 @@
 import React, { useState, useRef, useEffect, Fragment } from 'react';
 import { DefaultTheme, ThemeProvider } from 'styled-components';
 import themes from '../themes';
-import { Layout, LayoutContent, LayoutFooter, LayoutContainer, LayoutColumns, LayoutColumn } from '@paljs/ui/Layout';
+import {
+  Layout,
+  LayoutContent,
+  LayoutHeader,
+  LayoutFooter,
+  LayoutContainer,
+  LayoutColumns,
+  LayoutColumn,
+} from '@paljs/ui/Layout';
 import icons from '@paljs/icons';
 import { SidebarBody, SidebarRefObject, Sidebar } from '@paljs/ui/Sidebar';
 import SimpleLayout from './SimpleLayout';
@@ -13,6 +21,7 @@ import Link from 'next/link';
 import menuItems from '../menuItem';
 import HtmlHead, { HtmlHeadProps } from './HtmlHead';
 import StickyHeader from './StickyHeader';
+import PageFooter from './PageFooter';
 
 const getDefaultTheme = (): DefaultTheme['name'] => {
   if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
@@ -51,7 +60,9 @@ const LayoutPage: React.FC<HtmlHeadProps> = ({ children, ...rest }) => {
         <Fragment>
           <SimpleLayout />
           <Layout evaIcons={icons} className={!authLayout ? 'auth-layout' : ''}>
-            {!authLayout && <StickyHeader />}
+            <LayoutHeader>
+              <StickyHeader />
+            </LayoutHeader>
             <LayoutContainer>
               {!authLayout && (
                 <Sidebar
@@ -94,7 +105,9 @@ const LayoutPage: React.FC<HtmlHeadProps> = ({ children, ...rest }) => {
                 <LayoutColumns>
                   <LayoutColumn className="main-content">{children}</LayoutColumn>
                 </LayoutColumns>
-                {!authLayout && <LayoutFooter>Footer</LayoutFooter>}
+                <LayoutFooter>
+                  <PageFooter>PageFooter</PageFooter>
+                </LayoutFooter>
               </LayoutContent>
             </LayoutContainer>
           </Layout>

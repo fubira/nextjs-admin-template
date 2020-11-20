@@ -8,6 +8,7 @@ import themes from '../themes';
 import StickyHeader from './StickyHeader';
 import HtmlHead, { HtmlHeadProps } from './HtmlHead';
 import SimpleLayout from './SimpleLayout';
+import PageFooter from './PageFooter';
 
 const getDefaultTheme = (): DefaultTheme['name'] => {
   return localStorage.getItem('theme') as DefaultTheme['name'];
@@ -39,6 +40,7 @@ const LayoutPage: React.FC<HtmlHeadProps> = ({ children, ...rest }) => {
                 <LayoutColumns>
                   <LayoutColumn className="main-content">{children}</LayoutColumn>
                 </LayoutColumns>
+                <PageFooter />
               </LayoutContent>
             </LayoutContainer>
           </Layout>

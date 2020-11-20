@@ -10,12 +10,12 @@ const HeroContentStyle = styled.div`
   width: 90%;
   max-width: 1000px;
 
-  padding-top: 90px;
-  padding-bottom: 100px;
+  padding-top: 120px;
+  padding-bottom: 130px;
 
   ${breakpointUp('sm')`
-    padding-top: 130px;
-    padding-bottom: 140px;
+    padding-top: 150px;
+    padding-bottom: 160px;
   `}
 
   ${breakpointUp('md')`
@@ -23,8 +23,8 @@ const HeroContentStyle = styled.div`
     padding-bottom: 190px;
   `}
   ${breakpointUp('lg')`
-    padding-top: 220px;
-    padding-bottom: 240px;
+    padding-top: 210px;
+    padding-bottom: 230px;
   `}
 
   .slogan {

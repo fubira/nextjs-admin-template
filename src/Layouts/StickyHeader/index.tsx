@@ -42,7 +42,7 @@ const StickyHeader: React.FC<unknown> = () => {
 
   return (
     <StickyHeaderStyle>
-      <LayoutHeader className="header">
+      <LayoutHeader>
         <HeaderStyle>
           <Actions
             size="Medium"

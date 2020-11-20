@@ -24,16 +24,17 @@ const HtmlHead: React.FC<HtmlHeadProps> = ({ description, keywords, title }) => 
     <link rel="apple-touch-icon" type="image/png" href="/icons/icon-72x72.png" />
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" />
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-171177495-4"></script>
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-6XFPKSQD2K"></script>
     <script
       dangerouslySetInnerHTML={{
         __html: `
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-          
-            gtag('config', 'UA-171177495-4');
-              `,
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+        
+          gtag('config', 'G-6XFPKSQD2K');
+        `,
       }}
     />
   </Head>
