@@ -22,7 +22,7 @@ interface LogoProps {
   title?: string;
 }
 
-const Logo: React.FC<LogoProps> = ({ className, href, img, title }) => {
+const Logo: React.FC<LogoProps> = ({ className, href, title }) => {
   return (
     <LogoStyle className={className}>
       <Link href={href || '/'}>
