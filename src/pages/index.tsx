@@ -4,6 +4,10 @@ import PageLayout from 'Layouts/PageLayout';
 import Hero from 'components/Hero';
 import styled from 'styled-components';
 import { breakpointUp } from '@paljs/ui/breakpoints';
+import Container from '@paljs/ui/Container';
+import Row from '@paljs/ui/Row';
+import Col from '@paljs/ui/Col';
+import { Card } from '@paljs/ui/Card';
 
 const HeroContentStyle = styled.div`
   margin: 0 auto;
@@ -54,6 +58,12 @@ const HeroContentStyle = styled.div`
   }
 `;
 
+const ContainerContentStyle = styled.div`
+  .card {
+    height: 200px;
+  }
+`;
+
 export default function Index() {
   // const router = useRouter();
   useEffect(() => {
@@ -73,6 +83,54 @@ export default function Index() {
           <div className="message"> なんとなくそれっぽいメッセージ領域 </div>
         </HeroContentStyle>
       </Hero>
+      <ContainerContentStyle>
+        <Container>
+          <Row>
+            <Col breakPoint={{ xs: 12, sm: 6, md: 4, lg: 3 }}>
+              <Card className="card"> Test </Card>
+            </Col>
+            <Col breakPoint={{ xs: 12, sm: 6, md: 4, lg: 3 }}>
+              <Card className="card"> Test </Card>
+            </Col>
+            <Col breakPoint={{ xs: 12, sm: 6, md: 4, lg: 3 }}>
+              <Card className="card"> Test </Card>
+            </Col>
+            <Col breakPoint={{ xs: 12, sm: 6, md: 4, lg: 3 }}>
+              <Card className="card"> Test </Card>
+            </Col>
+            <Col breakPoint={{ xs: 12, sm: 6, md: 4, lg: 3 }}>
+              <Card className="card"> Test </Card>
+            </Col>
+            <Col breakPoint={{ xs: 12, sm: 6, md: 4, lg: 3 }}>
+              <Card className="card"> Test </Card>
+            </Col>
+            <Col breakPoint={{ xs: 12, sm: 6, md: 4, lg: 3 }}>
+              <Card className="card"> Test </Card>
+            </Col>
+            <Col breakPoint={{ xs: 12, sm: 6, md: 4, lg: 3 }}>
+              <Card className="card"> Test </Card>
+            </Col>
+            <Col breakPoint={{ xs: 12, sm: 6, md: 4, lg: 3 }}>
+              <Card className="card"> Test </Card>
+            </Col>
+            <Col breakPoint={{ xs: 12, sm: 6, md: 4, lg: 3 }}>
+              <Card className="card"> Test </Card>
+            </Col>
+            <Col breakPoint={{ xs: 12, sm: 6, md: 4, lg: 3 }}>
+              <Card className="card"> Test </Card>
+            </Col>
+            <Col breakPoint={{ xs: 12, sm: 6, md: 4, lg: 3 }}>
+              <Card className="card"> Test </Card>
+            </Col>
+            <Col breakPoint={{ xs: 12, sm: 6, md: 4, lg: 3 }}>
+              <Card className="card"> Test </Card>
+            </Col>
+            <Col breakPoint={{ xs: 12, sm: 6, md: 4, lg: 3 }}>
+              <Card className="card"> Test </Card>
+            </Col>
+          </Row>
+        </Container>
+      </ContainerContentStyle>
     </PageLayout>
   );
   // return <div />;

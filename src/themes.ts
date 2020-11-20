@@ -5,6 +5,7 @@ const shared: Partial<DefaultTheme> = {
   headerPadding: '1.5rem 1.5rem',
   headerHeight: '4rem',
   sidebarHeaderGap: '1rem',
+  footerPadding: '1.5rem 1.5rem',
   fontFamilyPrimary: `-apple-system, BlinkMacSystemFont,
           "Helvetica Neue", Arial, sans-serif,
           "Apple Color Emoji", "Segoe UI Emoji","Segoe UI Symbol"`,
