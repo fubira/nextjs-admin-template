@@ -8,7 +8,6 @@ import { MenuItemType } from '@paljs/ui/types';
 import { Menu, MenuRefObject } from '@paljs/ui/Menu';
 import Link from 'next/link';
 import { Actions, ActionType } from '@paljs/ui/Actions';
-import { ifWidthInBreakpoint } from '@paljs/ui/breakpoints';
 
 const PageFooterStyle = styled.div``;
 
@@ -26,16 +25,18 @@ const FooterStyle = styled.div`
   width: 100%;
   white-space: nowrap;
   justify-content: space-between;
+  margin: 0 0.6em;
 
   p {
-    font-size: 0.85rem;
+    font-size: 0.78rem;
   }
 
   .right > div {
-    align-content: center;
+    width: fit-content;
+    margin-left: auto;
   }
   .left > div {
-    align-content: center;
+    width: fit-content;
   }
 `;
 
@@ -123,16 +124,12 @@ const PageFooter: React.FC<unknown> = () => {
           </MenuStyle>
 
           <FooterStyle>
-            <Container fluid>
-              <Row reverse={ifWidthInBreakpoint(['xs', 'is'])}>
-                <Col first breakPoint={{ xs: 12, sm: 6, md: 6 }}>
-                  <p>&copy; CODEARTS 2020</p>
-                </Col>
-                <Col last breakPoint={{ xs: 12, sm: 6, md: 6 }}>
-                  <Actions className="right" Link={Link} size="Small" actions={actionItems} />
-                </Col>
-              </Row>
-            </Container>
+            <div className="left">
+              <p>&copy; CODEARTS 2020</p>
+            </div>
+            <div className="right">
+              <Actions nextJs Link={Link} size="Small" actions={actionItems} />
+            </div>
           </FooterStyle>
         </BlockStyle>
       </LayoutFooter>
