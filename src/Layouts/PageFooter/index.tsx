@@ -129,7 +129,7 @@ const PageFooter: React.FC<PageFooterProps> = ({ className }) => {
 
           <FooterStyle>
             <div className="left">
-              <p>&copy; CODEARTS 2020</p>
+              <p>&copy;2020 CODEARTS</p>
             </div>
             <div className="right">
               <Actions nextJs Link={Link} size="Small" actions={actionItems} />
