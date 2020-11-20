@@ -8,7 +8,7 @@ import { MenuItemType } from '@paljs/ui/types';
 import { Menu, MenuRefObject } from '@paljs/ui/Menu';
 import Link from 'next/link';
 import { Actions, ActionType } from '@paljs/ui/Actions';
-import { breakpointDown, ifWidthInBreakpoint } from '@paljs/ui/breakpoints';
+import { ifWidthInBreakpoint } from '@paljs/ui/breakpoints';
 
 const PageFooterStyle = styled.div``;
 
