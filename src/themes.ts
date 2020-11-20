@@ -2,7 +2,7 @@ import { createTheme } from '@paljs/theme';
 import { DefaultTheme } from 'styled-components';
 
 const shared: Partial<DefaultTheme> = {
-  headerPadding: '2rem 3rem',
+  headerPadding: '1.5rem 1.5rem',
   headerHeight: '4rem',
   sidebarHeaderGap: '1rem',
   fontFamilyPrimary: `-apple-system, BlinkMacSystemFont,
