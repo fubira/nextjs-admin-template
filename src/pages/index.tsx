@@ -71,7 +71,9 @@ const ContainerContentStyle = styled.span`
   }
 `;
 export async function getServerSideProps() {
-  const res = await fetch('http://localhost:3000/api/item/latest');
+  const apiBase = process.env.Vercel_URL || 'http://localhost:3000';
+
+  const res = await fetch(`${apiBase}/api/item/latest`);
   const items = await res.json();
 
   return {
