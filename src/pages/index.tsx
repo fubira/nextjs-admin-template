@@ -8,6 +8,10 @@ import Container from '@paljs/ui/Container';
 import Row from '@paljs/ui/Row';
 import Col from '@paljs/ui/Col';
 import { Card } from '@paljs/ui/Card';
+import { InferGetServerSidePropsType } from 'next';
+
+import Progress from '@paljs/ui/ProgressBar';
+import { EvaIcon } from '@paljs/ui/Icon';
 
 const HeroContentStyle = styled.div`
   margin: 0 auto;
@@ -58,18 +62,84 @@ const HeroContentStyle = styled.div`
   }
 `;
 
-const ContainerContentStyle = styled.div`
+const ContainerContentStyle = styled.span`
   .card {
-    height: 200px;
+    img {
+      height: 200px;
+      object-fit: cover;
+    }
   }
 `;
+export async function getServerSideProps() {
+  const res = await fetch('http://localhost:3000/api/item/latest');
+  const items = await res.json();
 
-export default function Index() {
+  return {
+    props: {
+      items,
+    },
+  };
+}
+
+export default function Index(props: InferGetServerSidePropsType<typeof getServerSideProps>) {
+  console.log(props);
   // const router = useRouter();
   useEffect(() => {
     // router.push('/');
   }),
     [];
+
+  const ItemCards = props.items.map((item: any) => {
+    const ItemCardsStyle = styled.span`
+      .card {
+        .image {
+          height: 200px;
+          object-fit: cover;
+        }
+
+        .description {
+          margin: 1rem 1rem;
+          height: 50px;
+          font-size: 16px;
+          line-height: 20px;
+        }
+        .information {
+          margin: 1rem 1rem;
+
+          .time {
+            display: flex;
+            position: absolute;
+            left: 1.8rem;
+          }
+
+          .money {
+            display: flex;
+            position: absolute;
+            right: 1.8rem;
+          }
+        }
+      }
+    `;
+
+    const style = { margin: '1rem' };
+    return (
+      <Col key={item.id} breakPoint={{ xs: 12, sm: 6, md: 4, lg: 3 }}>
+        <ItemCardsStyle>
+          <Card className="card">
+            <img className="image" src={item.image} />
+            <div className="description"> {item.description} </div>
+            <div className="information">
+              <span className="time">
+                <EvaIcon name="clock-outline" /> 1時間
+              </span>
+              <span className="money"> {Intl.NumberFormat().format(item.status.prices)} 円</span>
+            </div>
+            <Progress style={style} size="Medium" status="Primary" value={item.status.progress} displayValue />
+          </Card>
+        </ItemCardsStyle>
+      </Col>
+    );
+  });
 
   return (
     <PageLayout title="Landing">
@@ -85,11 +155,7 @@ export default function Index() {
       </Hero>
       <ContainerContentStyle>
         <Container>
-          <Row>
-            <Col breakPoint={{ xs: 12, sm: 6, md: 4, lg: 3 }}>
-              <Card className="card"> Test </Card>
-            </Col>
-          </Row>
+          <Row> {ItemCards} </Row>
         </Container>
       </ContainerContentStyle>
     </PageLayout>

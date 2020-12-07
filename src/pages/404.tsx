@@ -33,9 +33,9 @@ export default function Error(): JSX.Element {
       <ErrorStyle>
         <CardStyle>
           <h1>404 Page Not Found</h1>
-          <small>The page you were looking for doesn&apos;t exist</small>
+          <small>指定されたページはありません</small>
           <ButtonLink fullWidth appearance="hero" onClick={() => router.push('/')} shape="Rectangle">
-            Take me home
+            トップにもどる
           </ButtonLink>
         </CardStyle>
       </ErrorStyle>
