@@ -39,7 +39,7 @@ const HeroContentStyle = styled.div`
     font-weight: 700;
     line-height: 1.2em;
 
-    ${breakpointUp('sm')` font-size: 22px; `}
+    ${breakpointUp('sm')` font-size: 24px; `}
     ${breakpointUp('md')` font-size: 30px; `}
     ${breakpointUp('lg')` font-size: 36px; `}
   }
@@ -86,45 +86,6 @@ export default function Index() {
       <ContainerContentStyle>
         <Container>
           <Row>
-            <Col breakPoint={{ xs: 12, sm: 6, md: 4, lg: 3 }}>
-              <Card className="card"> Test </Card>
-            </Col>
-            <Col breakPoint={{ xs: 12, sm: 6, md: 4, lg: 3 }}>
-              <Card className="card"> Test </Card>
-            </Col>
-            <Col breakPoint={{ xs: 12, sm: 6, md: 4, lg: 3 }}>
-              <Card className="card"> Test </Card>
-            </Col>
-            <Col breakPoint={{ xs: 12, sm: 6, md: 4, lg: 3 }}>
-              <Card className="card"> Test </Card>
-            </Col>
-            <Col breakPoint={{ xs: 12, sm: 6, md: 4, lg: 3 }}>
-              <Card className="card"> Test </Card>
-            </Col>
-            <Col breakPoint={{ xs: 12, sm: 6, md: 4, lg: 3 }}>
-              <Card className="card"> Test </Card>
-            </Col>
-            <Col breakPoint={{ xs: 12, sm: 6, md: 4, lg: 3 }}>
-              <Card className="card"> Test </Card>
-            </Col>
-            <Col breakPoint={{ xs: 12, sm: 6, md: 4, lg: 3 }}>
-              <Card className="card"> Test </Card>
-            </Col>
-            <Col breakPoint={{ xs: 12, sm: 6, md: 4, lg: 3 }}>
-              <Card className="card"> Test </Card>
-            </Col>
-            <Col breakPoint={{ xs: 12, sm: 6, md: 4, lg: 3 }}>
-              <Card className="card"> Test </Card>
-            </Col>
-            <Col breakPoint={{ xs: 12, sm: 6, md: 4, lg: 3 }}>
-              <Card className="card"> Test </Card>
-            </Col>
-            <Col breakPoint={{ xs: 12, sm: 6, md: 4, lg: 3 }}>
-              <Card className="card"> Test </Card>
-            </Col>
-            <Col breakPoint={{ xs: 12, sm: 6, md: 4, lg: 3 }}>
-              <Card className="card"> Test </Card>
-            </Col>
             <Col breakPoint={{ xs: 12, sm: 6, md: 4, lg: 3 }}>
               <Card className="card"> Test </Card>
             </Col>

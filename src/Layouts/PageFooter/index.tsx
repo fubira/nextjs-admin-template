@@ -8,6 +8,7 @@ import { MenuItemType } from '@paljs/ui/types';
 import { Menu, MenuRefObject } from '@paljs/ui/Menu';
 import Link from 'next/link';
 import { Actions, ActionType } from '@paljs/ui/Actions';
+import Copyright from '../../components/Copyright/index';
 
 const PageFooterStyle = styled.div``;
 
@@ -129,7 +130,7 @@ const PageFooter: React.FC<PageFooterProps> = ({ className }) => {
 
           <FooterStyle>
             <div className="left">
-              <p>&copy;2020 CODEARTS</p>
+              <Copyright></Copyright>
             </div>
             <div className="right">
               <Actions nextJs Link={Link} size="Small" actions={actionItems} />

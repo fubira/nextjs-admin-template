@@ -12,7 +12,7 @@ interface CopyrightProps {
 const Copyright: React.FC<CopyrightProps> = ({ className }) => {
   return (
     <CopyrightStyle className={className}>
-      <p>&copy; CODEARTS 2020</p>
+      <p>&copy; 2020 CODEARTS</p>
     </CopyrightStyle>
   );
 };
