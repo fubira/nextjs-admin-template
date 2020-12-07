@@ -70,10 +70,17 @@ const ContainerContentStyle = styled.span`
     }
   }
 `;
-export async function getServerSideProps() {
-  const apiBase = process.env.NEXT_PUBLIC_VERCEL_URL || 'http://localhost:3000';
 
-  const res = await fetch(`${apiBase}/api/item/latest`);
+function getApiUrl() {
+  let url = process.env.NEXT_PUBLIC_VERCEL_URL || 'http://localhost:3000';
+  if (!url.startsWith('http')) {
+    url = `https://${url}`;
+  }
+  return url;
+}
+
+export async function getServerSideProps() {
+  const res = await fetch(`${getApiUrl()}/api/item/latest`);
   const items = await res.json();
 
   return {
