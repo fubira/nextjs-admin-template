@@ -93,8 +93,30 @@ export default function Index(props: InferGetServerSidePropsType<typeof getServe
     const ItemCardsStyle = styled.span`
       .card {
         .image {
+          position: relative;
           height: 200px;
-          object-fit: cover;
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 0;
+          }
+        }
+
+        .image::before {
+          background: rgba(255, 144, 32, 0.9);
+          bottom: 0;
+          color: #fff;
+          content: 'New!';
+          font-size: 15px;
+          font-weight: 700;
+          height: 23px;
+          letter-spacing: 1px;
+          line-height: 22px;
+          position: absolute;
+          text-align: center;
+          width: 100%;
+          z-index: 600;
         }
 
         .description {
@@ -126,7 +148,9 @@ export default function Index(props: InferGetServerSidePropsType<typeof getServe
       <Col key={item.id} breakPoint={{ xs: 12, sm: 6, md: 4, lg: 3 }}>
         <ItemCardsStyle>
           <Card className="card">
-            <img className="image" src={item.image} />
+            <div className="image">
+              <img src={item.image} alt={item.description} />
+            </div>
             <div className="description"> {item.description} </div>
             <div className="information">
               <span className="time">
