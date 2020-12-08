@@ -8,7 +8,9 @@ const data = [
       'https://images.unsplash.com/photo-1519335553051-96f1218cd5fa?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=320&ixlib=rb-1.2.1&q=80&w=480',
     description: '新世代のスマートウォッチ',
     type: 'all-in',
+    createdAt: 0,
     expiredAt: 0,
+    new: true,
     status: {
       target: 12345678,
       prices: 1000000,
@@ -23,7 +25,9 @@ const data = [
       'https://images.unsplash.com/photo-1521120413309-42e7eada0334?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=320&ixlib=rb-1.2.1&q=80&w=480',
     description: 'まったく新しいスマートフォンスタンド',
     type: 'all-in',
+    createdAt: 0,
     expiredAt: 0,
+    new: true,
     status: {
       target: 12345678,
       prices: 5550000,
@@ -38,6 +42,7 @@ const data = [
       'https://images.unsplash.com/photo-1542751110-97427bbecf20?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=320&ixlib=rb-1.2.1&q=80&w=480',
     description: '世界一軽いタブレット',
     type: 'all-in',
+    createdAt: 0,
     expiredAt: 0,
     status: {
       favorite: 100,
@@ -53,6 +58,7 @@ const data = [
       'https://images.unsplash.com/photo-1542751110-97427bbecf20?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=320&ixlib=rb-1.2.1&q=80&w=480',
     description: '世界一軽いタブレット',
     type: 'all-in',
+    createdAt: 0,
     expiredAt: 0,
     status: {
       favorite: 100,
