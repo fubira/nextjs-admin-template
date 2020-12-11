@@ -2,16 +2,13 @@ import React, { useEffect } from 'react';
 // import { useRouter } from 'next/router';
 import PageLayout from 'Layouts/PageLayout';
 import Hero from 'components/Hero';
+import ProjectCard from 'components/ProjectCard';
 import styled from 'styled-components';
 import { breakpointUp } from '@paljs/ui/breakpoints';
 import Container from '@paljs/ui/Container';
 import Row from '@paljs/ui/Row';
 import Col from '@paljs/ui/Col';
-import { Card } from '@paljs/ui/Card';
 import { InferGetServerSidePropsType } from 'next';
-
-import Progress from '@paljs/ui/ProgressBar';
-import { EvaIcon } from '@paljs/ui/Icon';
 
 const HeroContentStyle = styled.div`
   margin: 0 auto;
@@ -99,77 +96,9 @@ export default function Index(props: InferGetServerSidePropsType<typeof getServe
     [];
 
   const ItemCards = props.items.map((item: any) => {
-    const ItemCardsStyle = styled.span`
-      .card {
-        .image {
-          position: relative;
-          height: 200px;
-          img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            z-index: 0;
-          }
-        }
-
-        .image::before {
-          background: rgba(255, 144, 32, 0.9);
-          bottom: 0;
-          color: #fff;
-          content: 'New!';
-          font-size: 15px;
-          font-weight: 700;
-          height: 23px;
-          letter-spacing: 1px;
-          line-height: 22px;
-          position: absolute;
-          text-align: center;
-          width: 100%;
-          z-index: 600;
-        }
-
-        .description {
-          margin: 1rem 1rem;
-          height: 50px;
-          font-size: 16px;
-          line-height: 20px;
-        }
-        .information {
-          margin: 1rem 1rem;
-
-          .time {
-            display: flex;
-            position: absolute;
-            left: 1.8rem;
-          }
-
-          .money {
-            display: flex;
-            position: absolute;
-            right: 1.8rem;
-          }
-        }
-      }
-    `;
-
-    const style = { margin: '1rem' };
     return (
       <Col key={item.id} breakPoint={{ xs: 12, sm: 6, md: 4, lg: 3 }}>
-        <ItemCardsStyle>
-          <Card className="card">
-            <div className="image">
-              <img src={item.image} alt={item.description} />
-            </div>
-            <div className="description"> {item.description} </div>
-            <div className="information">
-              <span className="time">
-                <EvaIcon name="clock-outline" /> 1時間
-              </span>
-              <span className="money"> {Intl.NumberFormat().format(item.status.prices)} 円</span>
-            </div>
-            <Progress style={style} size="Medium" status="Primary" value={item.status.progress} displayValue />
-          </Card>
-        </ItemCardsStyle>
+        <ProjectCard item={item} />
       </Col>
     );
   });

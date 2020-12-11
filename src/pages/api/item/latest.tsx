@@ -15,7 +15,7 @@ const data = [
       target: 12345678,
       prices: 1000000,
       favorite: 100,
-      progress: 10,
+      // progress: 10,
     },
   },
   {
@@ -46,7 +46,7 @@ const data = [
     expiredAt: 0,
     status: {
       favorite: 100,
-      progress: 160,
+      progress: 99,
       target: 12345678,
       prices: 12345678,
     },
