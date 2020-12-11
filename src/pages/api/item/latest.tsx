@@ -9,7 +9,7 @@ const data = [
     description: '新世代のスマートウォッチ',
     type: 'all-in',
     createdAt: 0,
-    expiredAt: 0,
+    expiredAt: 1639214083000,
     new: true,
     status: {
       target: 12345678,
@@ -26,10 +26,10 @@ const data = [
     description: 'まったく新しいスマートフォンスタンド',
     type: 'all-in',
     createdAt: 0,
-    expiredAt: 0,
+    expiredAt: 1612105200000,
     new: true,
     status: {
-      target: 12345678,
+      target: 1623402883000,
       prices: 5550000,
       favorite: 100,
       progress: 50,
@@ -43,7 +43,7 @@ const data = [
     description: '世界一軽いタブレット',
     type: 'all-in',
     createdAt: 0,
-    expiredAt: 0,
+    expiredAt: 1609426800000,
     status: {
       favorite: 100,
       progress: 99,
@@ -56,10 +56,11 @@ const data = [
     title: 'ファンド4',
     image:
       'https://images.unsplash.com/photo-1542751110-97427bbecf20?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=320&ixlib=rb-1.2.1&q=80&w=480',
-    description: '世界一軽いタブレット',
+    description:
+      '長い説明文の場合に一体どういう表示になるのかを試してみるテスト１２３４５６７８９０世界一軽いタブレット',
     type: 'all-in',
     createdAt: 0,
-    expiredAt: 0,
+    expiredAt: 1608426800000,
     status: {
       favorite: 100,
       progress: 188,
