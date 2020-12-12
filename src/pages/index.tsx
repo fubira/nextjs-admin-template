@@ -1,4 +1,6 @@
 import React, { useEffect } from 'react';
+import { InferGetServerSidePropsType } from 'next';
+
 // import { useRouter } from 'next/router';
 import PageLayout from 'Layouts/PageLayout';
 import Hero from 'components/Hero';
@@ -8,7 +10,6 @@ import { breakpointUp } from '@paljs/ui/breakpoints';
 import Container from '@paljs/ui/Container';
 import Row from '@paljs/ui/Row';
 import Col from '@paljs/ui/Col';
-import { InferGetServerSidePropsType } from 'next';
 
 const HeroContentStyle = styled.div`
   margin: 0 auto;

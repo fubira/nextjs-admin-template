@@ -1,9 +1,10 @@
 import React, { useEffect } from 'react';
+import { InferGetServerSidePropsType, NextPageContext } from 'next';
+
 import PageLayout from 'Layouts/PageLayout';
 import styled from 'styled-components';
 import Container from '@paljs/ui/Container';
 import Row from '@paljs/ui/Row';
-import { InferGetServerSidePropsType, NextPageContext } from 'next';
 
 const ContainerContentStyle = styled.span`
   .card {
@@ -29,6 +30,7 @@ export async function getServerSideProps(context: NextPageContext) {
 
   return {
     props: {
+      test: 'test',
       project,
     },
   };
@@ -41,7 +43,7 @@ export default function Index(props: InferGetServerSidePropsType<typeof getServe
   }),
     [];
 
-  console.log(props.project.id);
+  console.log(props);
   return (
     <PageLayout title="Landing">
       <ContainerContentStyle>
