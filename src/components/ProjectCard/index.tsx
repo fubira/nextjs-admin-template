@@ -7,6 +7,12 @@ import dayjs from 'dayjs';
 import { Card } from '@paljs/ui/Card';
 import { EvaIcon } from '@paljs/ui/Icon';
 
+const CardStyle = styled.div`
+  a {
+    text-decoration: none;
+  }
+`;
+
 const CardImageStyle = styled.div<{ isNew?: boolean }>`
   position: relative;
   height: 200px;
@@ -73,26 +79,28 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
   const link = `/project/${project.id}`;
 
   return (
-    <Link href={link}>
-      <a>
-        <Card className="card">
-          <CardImageStyle isNew={project.new}>
-            <img src={project.image} alt={project.description} />
-          </CardImageStyle>
-          <CardDescriptionStyle> {project.description} </CardDescriptionStyle>
-          <CardInformationStyle>
-            <span className="time">
-              <span className="icon">
-                <EvaIcon name="clock-outline" />
+    <CardStyle>
+      <Link href={link}>
+        <a>
+          <Card>
+            <CardImageStyle isNew={project.new}>
+              <img src={project.image} alt={project.description} />
+            </CardImageStyle>
+            <CardDescriptionStyle> {project.description} </CardDescriptionStyle>
+            <CardInformationStyle>
+              <span className="time">
+                <span className="icon">
+                  <EvaIcon name="clock-outline" />
+                </span>
+                {dayjs(project.expiredAt).fromNow()}
               </span>
-              {dayjs(project.expiredAt).fromNow()}
-            </span>
-            <span className="money"> {Intl.NumberFormat().format(project.status.prices || 0)} 円</span>
-          </CardInformationStyle>
-          <Progress value={project.status.progress} />
-        </Card>
-      </a>
-    </Link>
+              <span className="money"> {Intl.NumberFormat().format(project.status.prices || 0)} 円</span>
+            </CardInformationStyle>
+            <Progress value={project.status.progress} />
+          </Card>
+        </a>
+      </Link>
+    </CardStyle>
   );
 };
 

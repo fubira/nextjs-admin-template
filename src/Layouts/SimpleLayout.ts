@@ -12,8 +12,25 @@ ${({ theme }) => css`
     -moz-osx-font-smooting: grayscale;
   }
 
-  .column.small {
-    flex: 0.15 !important;
+  h1 {
+    font-size: 24px;
+    margin: 0;
+  }
+
+  h2 {
+    font-size: 20px;
+  }
+
+  h3 {
+    font-size: 16px;
+  }
+
+  h4 {
+    font-size: 14px;
+  }
+
+  h5 {
+    font-size: 13px;
   }
 
   aside.settings-sidebar {
@@ -44,10 +61,6 @@ ${({ theme }) => css`
         width: 19rem;
       }
     }
-  }
-
-  .content-width {
-    max-width: 1000px;
   }
 
   .main-content {

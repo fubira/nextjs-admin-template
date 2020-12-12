@@ -6,14 +6,14 @@ import Link from 'next/link';
 
 import Auth, { Group } from 'components/Auth';
 import Socials from 'components/Auth/Socials';
-import Layout from 'Layouts/UserLayout';
+import PageLayout from 'Layouts/PageLayout';
 
 export default function Login() {
   const onCheckbox = () => {
     // v will be true or false
   };
   return (
-    <Layout title="Login">
+    <PageLayout title="Login">
       <Auth title="Login" subTitle="Hello! Login with your email">
         <form>
           <InputGroup fullWidth>
@@ -42,6 +42,6 @@ export default function Login() {
           </Link>
         </p>
       </Auth>
-    </Layout>
+    </PageLayout>
   );
 }
