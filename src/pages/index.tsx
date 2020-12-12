@@ -77,12 +77,12 @@ function getApiUrl() {
 }
 
 export async function getServerSideProps() {
-  const res = await fetch(`${getApiUrl()}/api/item/latest`);
-  const items = await res.json();
+  const res = await fetch(`${getApiUrl()}/api/project/latest`);
+  const projects = await res.json();
 
   return {
     props: {
-      items,
+      projects,
     },
   };
 }
@@ -95,10 +95,10 @@ export default function Index(props: InferGetServerSidePropsType<typeof getServe
   }),
     [];
 
-  const ItemCards = props.items.map((item: any) => {
+  const ProjectCards = props.projects.map((project: any) => {
     return (
-      <Col key={item.id} breakPoint={{ xs: 12, sm: 6, md: 4, lg: 3 }}>
-        <ProjectCard item={item} />
+      <Col key={project.id} breakPoint={{ xs: 12, sm: 6, md: 4, lg: 3 }}>
+        <ProjectCard project={project} />
       </Col>
     );
   });
@@ -117,7 +117,7 @@ export default function Index(props: InferGetServerSidePropsType<typeof getServe
       </Hero>
       <ContainerContentStyle>
         <Container>
-          <Row> {ItemCards} </Row>
+          <Row> {ProjectCards} </Row>
         </Container>
       </ContainerContentStyle>
     </PageLayout>

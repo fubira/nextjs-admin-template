@@ -1,8 +1,6 @@
-import type { NextApiRequest, NextApiResponse } from 'next';
-
-const data = [
+const MockData = [
   {
-    id: '0000000001',
+    id: '1',
     title: 'ファンド1',
     image:
       'https://images.unsplash.com/photo-1519335553051-96f1218cd5fa?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=320&ixlib=rb-1.2.1&q=80&w=480',
@@ -11,15 +9,30 @@ const data = [
     createdAt: 0,
     expiredAt: 1639214083000,
     new: true,
+    products: [
+      {
+        id: '1-1',
+        title: 'プロダクト1',
+        description: 'プロダクト1の説明',
+        image:
+          'https://images.unsplash.com/photo-1519335553051-96f1218cd5fa?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=320&ixlib=rb-1.2.1&q=80&w=480',
+        price: 10000,
+        tax: 1000,
+        estimatedArrivalDate: '2021年末',
+        stockProducts: 300,
+        soldProducts: 110,
+      },
+    ],
     status: {
-      target: 12345678,
-      prices: 1000000,
+      totalPrice: 12345678,
+      soldPrice: 1000000,
+      supporter: 100,
       favorite: 100,
       // progress: 10,
     },
   },
   {
-    id: '0000000002',
+    id: '2',
     title: 'ファンド2',
     image:
       'https://images.unsplash.com/photo-1521120413309-42e7eada0334?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=320&ixlib=rb-1.2.1&q=80&w=480',
@@ -36,7 +49,7 @@ const data = [
     },
   },
   {
-    id: '0000000003',
+    id: '3',
     title: 'ファンド3',
     image:
       'https://images.unsplash.com/photo-1542751110-97427bbecf20?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=320&ixlib=rb-1.2.1&q=80&w=480',
@@ -52,7 +65,7 @@ const data = [
     },
   },
   {
-    id: '0000000004',
+    id: '4',
     title: 'ファンド4',
     image:
       'https://images.unsplash.com/photo-1542751110-97427bbecf20?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=320&ixlib=rb-1.2.1&q=80&w=480',
@@ -70,6 +83,4 @@ const data = [
   },
 ];
 
-export default function handler(req: NextApiRequest, res: NextApiResponse): void {
-  res.status(200).json(data);
-}
+export default MockData;

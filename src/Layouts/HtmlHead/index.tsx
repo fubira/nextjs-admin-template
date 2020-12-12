@@ -23,7 +23,10 @@ const HtmlHead: React.FC<HtmlHeadProps> = ({ description, keywords, title }) => 
     <link rel="icon" type="image/png" href="/icons/icon-72x72.png" />
     <link rel="apple-touch-icon" type="image/png" href="/icons/icon-72x72.png" />
     <link rel="preconnect" href="https://fonts.gstatic.com" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;700&display=swap"
+    />
   </Head>
 );
 

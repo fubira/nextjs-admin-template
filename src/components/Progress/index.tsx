@@ -13,7 +13,7 @@ const ProgressAreaStyle = styled.div`
   width: 100%;
 `;
 
-const ProgressBackgroundStyle = styled.div`
+const BackgroundStyle = styled.div`
   height: 100%;
   width: 100%;
   background-color: #dfdfef;
@@ -21,7 +21,7 @@ const ProgressBackgroundStyle = styled.div`
   text-align: right;
 `;
 
-const ProgressFrontStyle = styled.div<{ bgcolor?: string; value?: number }>`
+const FrontStyle = styled.div<{ bgcolor?: string; value?: number }>`
   height: 100%;
   max-width: 100%;
   width: ${({ value }) => (value ? `${value}%` : 0)};
@@ -30,6 +30,7 @@ const ProgressFrontStyle = styled.div<{ bgcolor?: string; value?: number }>`
 `;
 
 const TextStyle = styled.span`
+  text-decoration: none;
   padding-left: 0.6rem;
   color: inherit;
 `;
@@ -44,9 +45,9 @@ const Progress: React.FC<ProgressProps> = ({ value }) => {
   return (
     <ContainerStyle>
       <ProgressAreaStyle>
-        <ProgressBackgroundStyle>
-          <ProgressFrontStyle bgcolor={bgcolor} value={value}></ProgressFrontStyle>
-        </ProgressBackgroundStyle>
+        <BackgroundStyle>
+          <FrontStyle bgcolor={bgcolor} value={value}></FrontStyle>
+        </BackgroundStyle>
       </ProgressAreaStyle>
       <TextStyle>{`${value ? value : 0}%`}</TextStyle>
     </ContainerStyle>

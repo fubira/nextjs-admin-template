@@ -2,12 +2,12 @@ import { createTheme } from '@paljs/theme';
 import { DefaultTheme } from 'styled-components';
 
 const shared: Partial<DefaultTheme> = {
-  headerPadding: '1.0rem 1.0rem',
+  headerPadding: '1rem',
   headerHeight: '4rem',
   sidebarHeaderGap: '1rem',
-  footerPadding: '1.0rem',
+  footerPadding: '1rem',
   fontFamilyPrimary: `-apple-system, BlinkMacSystemFont,
-          "Helvetica Neue", Arial, sans-serif,
+          "Open Sans", "Helvetica Neue", Arial, sans-serif,
           "Apple Color Emoji", "Segoe UI Emoji","Segoe UI Symbol"`,
   actionsDividerWidth: '0',
 };
