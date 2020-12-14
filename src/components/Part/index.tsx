@@ -1,13 +1,21 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 const ContainerStyle = styled.div`
-  margin-bottom: 40px;
+  ${({ theme }) => css`
+    box-shadow: ${theme.shadow};
+  `}
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+  padding: 1.5rem;
+
   word-break: normal;
   background: white;
   border-radius: 4px;
-  border-bottom: 2px solid #e7e7e7;
-  padding: 20px;
+
+  .description {
+    margin: 0.5rem 0;
+  }
 `;
 
 interface PartProps {
@@ -19,7 +27,7 @@ const Part: React.FC<PartProps> = ({ className, title, children }) => {
   return (
     <ContainerStyle className={className}>
       <h3>{title}</h3>
-      <p>{children}</p>
+      <p className="description">{children}</p>
     </ContainerStyle>
   );
 };

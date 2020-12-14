@@ -88,16 +88,31 @@ const rightMenuItems: MenuItemType[] = [
 
 const actionItems: ActionType[] = [
   {
-    link: { href: '/about' },
-    content: <p> 運営会社 </p>,
+    content: (
+      <Link href="/company">
+        <a>
+          <p> 運営会社 </p>
+        </a>
+      </Link>
+    ),
   },
   {
-    link: { href: '/term' },
-    content: <p> 利用規約 </p>,
+    content: (
+      <Link href="/term">
+        <a>
+          <p> 利用規約 </p>
+        </a>
+      </Link>
+    ),
   },
   {
-    link: { href: '/privacy' },
-    content: <p> プライバシー </p>,
+    content: (
+      <Link href="/privacy">
+        <a>
+          <p> プライバシー </p>
+        </a>
+      </Link>
+    ),
   },
 ];
 

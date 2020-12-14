@@ -1,5 +1,6 @@
 import React from 'react';
 import type { AppProps /*, AppContext */ } from 'next/app';
+import 'ress';
 
 import dayjs from 'dayjs';
 import 'dayjs/locale/ja';
