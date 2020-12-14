@@ -1,15 +1,25 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import styled from 'styled-components';
+import { useRouter } from 'next/router';
+import Link from 'next/link';
 
-// import { useRouter } from 'next/router';
+import { Menu, MenuRefObject } from '@paljs/ui/Menu';
+import { MenuItemType } from '@paljs/ui/types';
+
 import PageLayout from 'Layouts/PageLayout';
-import Part from '../components/Part/index';
 import ContentSection from 'Layouts/ContentSection';
+import MenuSection from 'Layouts/MenuSection/index';
+import Part from '../components/Part/index';
 
 const ContentStyle = styled.div`
+  float: left;
+  width: 700px;
+  margin: auto;
+
   dl {
     display: table;
     position: relative;
+    width: 100%;
   }
 
   dt,
@@ -30,12 +40,41 @@ const ContentStyle = styled.div`
     padding-left: 1.5rem;
   }
 `;
+const SideMenuStyle = styled.div`
+  float: right;
+  width: 200px;
+  margin: auto;
+  padding: 0;
+`;
+const leftMenuItems: MenuItemType[] = [
+  {
+    title: '運営会社',
+    link: { href: '/company' },
+  },
+  {
+    title: '利用規約',
+    link: { href: '/term' },
+  },
+  {
+    title: 'プライバシーポリシー',
+    link: { href: '/privacy' },
+  },
+];
 
 export default function Index() {
+  const router = useRouter();
+  const menuRef = useRef<MenuRefObject>(null);
+  console.log(router.pathname);
+
   return (
     <PageLayout title="Landing">
-      <ContentSection>
-        <ContentStyle>
+      <SideMenuStyle>
+        <MenuSection>
+          <Menu nextJs ref={menuRef} Link={Link} currentPath={router.pathname} items={leftMenuItems} />
+        </MenuSection>
+      </SideMenuStyle>
+      <ContentStyle>
+        <ContentSection>
           <h2>運営会社</h2>
           <Part>
             <dl>
@@ -88,8 +127,8 @@ export default function Index() {
               </div>
             </dl>
           </Part>
-        </ContentStyle>
-      </ContentSection>
+        </ContentSection>
+      </ContentStyle>
     </PageLayout>
   );
   // return <div />;

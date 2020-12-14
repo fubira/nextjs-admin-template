@@ -27,7 +27,7 @@ const Part: React.FC<PartProps> = ({ className, title, children }) => {
   return (
     <ContainerStyle className={className}>
       <h3>{title}</h3>
-      <p className="description">{children}</p>
+      <div className="description">{children}</div>
     </ContainerStyle>
   );
 };

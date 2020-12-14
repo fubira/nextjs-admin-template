@@ -8,11 +8,11 @@ export default function Index() {
   return (
     <PageLayout title="Landing">
       <ContentSection>
-        <h3>プライバシーポリシー</h3>
-        <Part title="プライバシーポリシー1"> プライバシーポリシー1 </Part>
-        <Part title="プライバシーポリシー2"> プライバシーポリシー2 </Part>
-        <Part title="プライバシーポリシー3"> プライバシーポリシー3 </Part>
-        <Part title="プライバシーポリシー4"> プライバシーポリシー4 </Part>
+        <h2>プライバシーポリシー</h2>
+        <Part title="項目1"> 内容1 </Part>
+        <Part title="項目2"> 内容2 </Part>
+        <Part title="項目3"> 内容3 </Part>
+        <Part title="項目4"> 内容4 </Part>
       </ContentSection>
     </PageLayout>
   );

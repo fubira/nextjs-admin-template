@@ -40,7 +40,7 @@ const LayoutPage: React.FC<HtmlHeadProps> = ({ children, ...rest }) => {
                 <LayoutColumns>
                   <LayoutColumn className="main-content">{children}</LayoutColumn>
                 </LayoutColumns>
-                <PageFooter className="main-content" />
+                <PageFooter />
               </LayoutContent>
             </LayoutContainer>
           </Layout>
