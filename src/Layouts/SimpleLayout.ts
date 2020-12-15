@@ -33,6 +33,10 @@ ${({ theme }) => css`
     font-size: 13px;
   }
 
+  a {
+    text-decoration: none;
+  }
+
   aside.settings-sidebar {
     transition: transform 0.3s ease;
     width: 19rem;

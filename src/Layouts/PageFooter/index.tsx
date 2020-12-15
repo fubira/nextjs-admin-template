@@ -1,13 +1,15 @@
 import React, { useRef } from 'react';
 import styled from 'styled-components';
+import Link from 'next/link';
+
 import { LayoutFooter } from '@paljs/ui/Layout';
+import { Actions, ActionType } from '@paljs/ui/Actions';
+import { Menu, MenuRefObject } from '@paljs/ui/Menu';
+import { MenuItemType } from '@paljs/ui/types';
 import Container from '@paljs/ui/Container';
 import Row from '@paljs/ui/Row';
 import Col from '@paljs/ui/Col';
-import { MenuItemType } from '@paljs/ui/types';
-import { Menu, MenuRefObject } from '@paljs/ui/Menu';
-import Link from 'next/link';
-import { Actions, ActionType } from '@paljs/ui/Actions';
+
 import Copyright from '../../components/Copyright/index';
 
 const PageFooterStyle = styled.div``;
@@ -17,19 +19,23 @@ const BlockStyle = styled.div`
   width: 100%;
 `;
 
-const MenuStyle = styled.div`
-  margin-bottom: 3em;
+const FooterMenuStyle = styled.div`
+  margin-bottom: 2em;
 `;
 
-const FooterStyle = styled.div`
+const FooterInfoStyle = styled.div`
   display: flex;
   width: 100%;
   white-space: nowrap;
   justify-content: space-between;
-  margin: 0 0.6em;
+  margin: 0 1rem;
 
   p {
-    font-size: 0.78rem;
+    font-size: 0.75rem;
+  }
+
+  div {
+    margin: auto 0;
   }
 
   .right > div {
@@ -38,6 +44,7 @@ const FooterStyle = styled.div`
   }
   .left > div {
     width: fit-content;
+    margin-right: 1rem;
   }
 `;
 
@@ -127,7 +134,7 @@ const PageFooter: React.FC<PageFooterProps> = ({ className }) => {
     <PageFooterStyle className={className}>
       <LayoutFooter>
         <BlockStyle>
-          <MenuStyle>
+          <FooterMenuStyle>
             <Container fluid>
               <Row>
                 <Col breakPoint={{ xs: 12, sm: 4, md: 4 }}>
@@ -141,16 +148,16 @@ const PageFooter: React.FC<PageFooterProps> = ({ className }) => {
                 </Col>
               </Row>
             </Container>
-          </MenuStyle>
+          </FooterMenuStyle>
 
-          <FooterStyle>
+          <FooterInfoStyle>
             <div className="left">
               <Copyright></Copyright>
             </div>
             <div className="right">
               <Actions nextJs Link={Link} size="Small" actions={actionItems} />
             </div>
-          </FooterStyle>
+          </FooterInfoStyle>
         </BlockStyle>
       </LayoutFooter>
     </PageFooterStyle>
