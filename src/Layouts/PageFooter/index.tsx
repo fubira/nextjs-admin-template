@@ -11,6 +11,7 @@ import Row from '@paljs/ui/Row';
 import Col from '@paljs/ui/Col';
 
 import Copyright from '../../components/Copyright/index';
+import { breakpointDown } from '@paljs/ui/breakpoints';
 
 const PageFooterStyle = styled.div``;
 
@@ -27,8 +28,15 @@ const FooterInfoStyle = styled.div`
   display: flex;
   width: 100%;
   white-space: nowrap;
-  justify-content: space-between;
   margin: 0 1rem;
+  flex-direction: row-reverse;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  ${breakpointDown('sm')`
+    flex-wrap: wrap;
+    justify-content: center;
+  `}
 
   p {
     font-size: 0.75rem;
@@ -151,11 +159,11 @@ const PageFooter: React.FC<PageFooterProps> = ({ className }) => {
           </FooterMenuStyle>
 
           <FooterInfoStyle>
-            <div className="left">
-              <Copyright></Copyright>
-            </div>
             <div className="right">
               <Actions nextJs Link={Link} size="Small" actions={actionItems} />
+            </div>
+            <div className="left">
+              <Copyright></Copyright>
             </div>
           </FooterInfoStyle>
         </BlockStyle>
