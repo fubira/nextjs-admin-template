@@ -87,9 +87,9 @@ const FooterMenuStyle = styled.div`
 `;
 
 const FooterMenu: React.FC<{
-  ref: React.RefObject<MenuRefObject> | null;
+  menuref: React.RefObject<MenuRefObject> | null;
   link: any;
-}> = ({ ref, link }) => {
+}> = ({ menuref, link }) => {
   return (
     <FooterMenuStyle>
       <Container fluid>
@@ -98,7 +98,7 @@ const FooterMenu: React.FC<{
             <Menu
               nextJs
               className="footer-menu-part"
-              ref={ref}
+              ref={menuref}
               Link={link}
               currentPath="/"
               items={footerMenuItems.left}
@@ -108,7 +108,7 @@ const FooterMenu: React.FC<{
             <Menu
               nextJs
               className="footer-menu-part"
-              ref={ref}
+              ref={menuref}
               Link={link}
               currentPath="/"
               items={footerMenuItems.center}
@@ -118,7 +118,7 @@ const FooterMenu: React.FC<{
             <Menu
               nextJs
               className="footer-menu-part"
-              ref={ref}
+              ref={menuref}
               Link={link}
               currentPath="/"
               items={footerMenuItems.right}
@@ -201,7 +201,7 @@ const PageFooter: React.FC<PageFooterProps> = ({ className }) => {
   return (
     <LayoutFooter>
       <FooterBlockStyle className={className}>
-        <FooterMenu ref={ref} link={Link} />
+        <FooterMenu menuref={ref} link={Link} />
         <FooterInfoStyle>
           <FooterAction className="right" link={Link} />
           <FooterCopyright className="left" />

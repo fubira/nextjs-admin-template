@@ -1,15 +1,17 @@
 import React from 'react';
+import styled from 'styled-components';
+
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import styled from 'styled-components';
+
 import { LayoutHeader } from '@paljs/ui/Layout';
 import { Actions } from '@paljs/ui/Actions';
 import ContextMenu from '@paljs/ui/ContextMenu';
 import User from '@paljs/ui/User';
 import { breakpointDown } from '@paljs/ui/breakpoints';
 
-import Logo from '../Logo';
-import SearchInput from '../SearchInput';
+import Logo from 'components/Logo';
+import SearchInput from 'components/SearchInput';
 
 const StickyHeaderStyle = styled.div`
   position: sticky;
