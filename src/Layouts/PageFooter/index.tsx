@@ -6,11 +6,10 @@ import { LayoutFooter } from '@paljs/ui/Layout';
 import { Actions, ActionType } from '@paljs/ui/Actions';
 import { Menu, MenuRefObject } from '@paljs/ui/Menu';
 import { MenuItemType } from '@paljs/ui/types';
+import { breakpointDown } from '@paljs/ui/breakpoints';
 import Container from '@paljs/ui/Container';
 import Row from '@paljs/ui/Row';
 import Col from '@paljs/ui/Col';
-
-import { breakpointDown } from '@paljs/ui/breakpoints';
 
 const footerMenuItems: {
   left: MenuItemType[];
@@ -49,48 +48,7 @@ const footerMenuItems: {
   ],
 };
 
-const PageFooterStyle = styled.div``;
-
-const BlockStyle = styled.div`
-  display: block;
-  width: 100%;
-`;
-
-const FooterInfoStyle = styled.div`
-  display: flex;
-  width: 100%;
-  white-space: nowrap;
-  margin: 0 1rem;
-  flex-direction: row-reverse;
-  flex-wrap: wrap;
-  justify-content: space-between;
-
-  ${breakpointDown('xs')`
-    flex-wrap: wrap;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    `}
-
-  p {
-    font-size: 0.75rem;
-  }
-
-  div {
-    margin: auto 0;
-  }
-
-  .right > div {
-    width: fit-content;
-    margin-left: auto;
-  }
-  .left > div {
-    width: fit-content;
-    margin-right: 1rem;
-  }
-`;
-
-const actionItems: ActionType[] = [
+const footerActionItems: ActionType[] = [
   {
     content: (
       <Link href="/company">
@@ -127,7 +85,7 @@ const FooterMenu: React.FC<{
   const FooterMenuStyle = styled.div`
     margin-bottom: 1.5em;
 
-    .footer-menu {
+    .footer-menu-part {
       padding: 0.5em;
     }
   `;
@@ -137,13 +95,34 @@ const FooterMenu: React.FC<{
       <Container fluid>
         <Row>
           <Col breakPoint={{ xs: 12, sm: 4, md: 4 }}>
-            <Menu className="footer-menu" nextJs ref={ref} Link={link} currentPath="/" items={footerMenuItems.left} />
+            <Menu
+              nextJs
+              className="footer-menu-part"
+              ref={ref}
+              Link={link}
+              currentPath="/"
+              items={footerMenuItems.left}
+            />
           </Col>
           <Col breakPoint={{ xs: 12, sm: 4, md: 4 }}>
-            <Menu className="footer-menu" nextJs ref={ref} Link={link} currentPath="/" items={footerMenuItems.center} />
+            <Menu
+              nextJs
+              className="footer-menu-part"
+              ref={ref}
+              Link={link}
+              currentPath="/"
+              items={footerMenuItems.center}
+            />
           </Col>
           <Col breakPoint={{ xs: 12, sm: 4, md: 4 }}>
-            <Menu className="footer-menu" nextJs ref={ref} Link={link} currentPath="/" items={footerMenuItems.right} />
+            <Menu
+              nextJs
+              className="footer-menu-part"
+              ref={ref}
+              Link={link}
+              currentPath="/"
+              items={footerMenuItems.right}
+            />
           </Col>
         </Row>
       </Container>
@@ -151,17 +130,65 @@ const FooterMenu: React.FC<{
   );
 };
 
-const Copyright: React.FC = () => {
-  const CopyrightStyle = styled.div`
+const FooterAction: React.FC<{
+  className: string;
+  link: any;
+}> = ({ className, link }) => {
+  const FooterActionStyle = styled.div`
+    margin: 0.5rem 0;
+  `;
+  return (
+    <FooterActionStyle className={className}>
+      <Actions nextJs Link={link} size="Small" actions={footerActionItems} />
+    </FooterActionStyle>
+  );
+};
+
+const FooterCopyright: React.FC<{ className: string }> = ({ className }) => {
+  const FooterCopyrightStyle = styled.div`
+    margin: 0.5rem 0;
     white-space: nowrap;
   `;
 
   return (
-    <CopyrightStyle>
+    <FooterCopyrightStyle className={className}>
       <p>&copy; 2020 CODEARTS</p>
-    </CopyrightStyle>
+    </FooterCopyrightStyle>
   );
 };
+
+const FooterBlockStyle = styled.div`
+  display: block;
+  width: 100%;
+`;
+
+const FooterInfoStyle = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  white-space: nowrap;
+  padding: 0 1rem;
+
+  ${breakpointDown('is')`
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  `}
+
+  p {
+    font-size: 0.75rem;
+  }
+
+  .right > div {
+    width: fit-content;
+    margin-left: auto;
+  }
+  .left > div {
+    width: fit-content;
+    margin-right: 1rem;
+  }
+`;
 
 export interface PageFooterProps {
   className?: string;
@@ -171,22 +198,15 @@ const PageFooter: React.FC<PageFooterProps> = ({ className }) => {
   const ref = useRef<MenuRefObject>(null);
 
   return (
-    <PageFooterStyle className={className}>
-      <LayoutFooter>
-        <BlockStyle>
-          <FooterMenu ref={ref} link={Link} />
-
-          <FooterInfoStyle>
-            <div className="right">
-              <Actions nextJs Link={Link} size="Small" actions={actionItems} />
-            </div>
-            <div className="left">
-              <Copyright />
-            </div>
-          </FooterInfoStyle>
-        </BlockStyle>
-      </LayoutFooter>
-    </PageFooterStyle>
+    <LayoutFooter>
+      <FooterBlockStyle className={className}>
+        <FooterMenu ref={ref} link={Link} />
+        <FooterInfoStyle>
+          <FooterAction className="right" link={Link} />
+          <FooterCopyright className="left" />
+        </FooterInfoStyle>
+      </FooterBlockStyle>
+    </LayoutFooter>
   );
 };
 export default PageFooter;
