@@ -12,7 +12,6 @@ import {
 } from '@paljs/ui/Layout';
 import icons from '@paljs/icons';
 import { SidebarBody, SidebarRefObject, Sidebar } from '@paljs/ui/Sidebar';
-import BaseStyle from './BaseStyle';
 import { useRouter } from 'next/router';
 import { EvaIcon } from '@paljs/ui/Icon';
 import { Button } from '@paljs/ui/Button';
@@ -20,9 +19,10 @@ import { Menu, MenuRefObject } from '@paljs/ui/Menu';
 import Link from 'next/link';
 import menuItems from '../menuItem';
 
-import HtmlHead, { HtmlHeadProps } from 'layouts/HtmlHead';
-import StickyHeader from 'layouts/StickyHeader';
-import PageFooter from 'layouts/PageFooter';
+import HtmlHead, { HtmlHeadProps } from './HtmlHead';
+import StickyHeader from './StickyHeader';
+import PageFooter from './PageFooter';
+import BaseStyle from './BaseStyle';
 
 const getDefaultTheme = (): DefaultTheme['name'] => {
   if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
