@@ -16,6 +16,7 @@ const getDefaultTheme = (): DefaultTheme['name'] => {
 
 const IE11FlexIsNotKnownMinHeihgtContentSizeBugFixWrapperStyle = styled.div`
   display: flex;
+  height: 100%;
 `;
 
 export interface PageLayoutProps {
