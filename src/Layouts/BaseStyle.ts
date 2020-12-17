@@ -1,7 +1,7 @@
 import { createGlobalStyle, css } from 'styled-components';
 import GlobalStyle from '@paljs/ui/GlobalStyle';
 
-const SimpleLayout = createGlobalStyle`
+const BaseStyle = createGlobalStyle`
 ${({ theme }) => css`
   ${GlobalStyle}
 
@@ -98,4 +98,4 @@ ${({ theme }) => css`
   }
 `}
 `;
-export default SimpleLayout;
+export default BaseStyle;

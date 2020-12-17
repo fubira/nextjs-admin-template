@@ -7,7 +7,7 @@ import { useRouter } from 'next/router';
 import themes from '../themes';
 import StickyHeader from './StickyHeader';
 import HtmlHead, { HtmlHeadProps } from './HtmlHead';
-import SimpleLayout from './SimpleLayout';
+import BaseStyle from './BaseStyle';
 import PageFooter from './PageFooter';
 
 const getDefaultTheme = (): DefaultTheme['name'] => {
@@ -32,7 +32,7 @@ const LayoutPage: React.FC<HtmlHeadProps> = ({ children, ...rest }) => {
       <HtmlHead {...rest} />
       <ThemeProvider theme={themes(theme)}>
         <Fragment>
-          <SimpleLayout />
+          <BaseStyle />
           <Layout evaIcons={icons} className={!authLayout ? 'auth-layout' : ''}>
             <StickyHeader />
             <LayoutContainer>

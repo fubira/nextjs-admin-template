@@ -12,7 +12,7 @@ import {
 } from '@paljs/ui/Layout';
 import icons from '@paljs/icons';
 import { SidebarBody, SidebarRefObject, Sidebar } from '@paljs/ui/Sidebar';
-import SimpleLayout from './SimpleLayout';
+import BaseStyle from './BaseStyle';
 import { useRouter } from 'next/router';
 import { EvaIcon } from '@paljs/ui/Icon';
 import { Button } from '@paljs/ui/Button';
@@ -58,7 +58,7 @@ const LayoutPage: React.FC<HtmlHeadProps> = ({ children, ...rest }) => {
       <HtmlHead {...rest} />
       <ThemeProvider theme={themes(theme)}>
         <Fragment>
-          <SimpleLayout />
+          <BaseStyle />
           <Layout evaIcons={icons} className={!authLayout ? 'auth-layout' : ''}>
             <LayoutHeader>
               <StickyHeader />

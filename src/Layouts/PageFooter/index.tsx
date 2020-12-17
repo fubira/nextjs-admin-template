@@ -33,10 +33,12 @@ const FooterInfoStyle = styled.div`
   flex-wrap: wrap;
   justify-content: space-between;
 
-  ${breakpointDown('sm')`
+  ${breakpointDown('xs')`
     flex-wrap: wrap;
     justify-content: center;
-  `}
+    flex-direction: column;
+    align-items: center;
+    `}
 
   p {
     font-size: 0.75rem;

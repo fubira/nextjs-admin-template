@@ -14,11 +14,13 @@ import Part from '../components/Part/index';
 const FlexContentStyle = styled.div`
   display: flex;
   justify-content: center;
+  max-width: 960px;
+  margin: auto;
 `;
 
 const ContentStyle = styled.div`
-  min-width: 600px;
-
+  min-width: 400px;
+  width: 100%;
   dl {
     display: table;
     position: relative;
@@ -44,7 +46,7 @@ const ContentStyle = styled.div`
   }
 `;
 const SideMenuStyle = styled.div`
-  width: 180px;
+  width: 200px;
   margin: 1rem;
 `;
 const leftMenuItems: MenuItemType[] = [

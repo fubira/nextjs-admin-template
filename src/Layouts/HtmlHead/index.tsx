@@ -19,7 +19,6 @@ const HtmlHead: React.FC<HtmlHeadProps> = ({ description, keywords, title }) => 
     <meta name="twitter:creator" content="@AhmedElywh" />
     <meta name="twitter:image" content="" />
     <meta property="og:image" content="" />
-
     <link rel="icon" type="image/png" href="/icons/icon-72x72.png" />
     <link rel="apple-touch-icon" type="image/png" href="/icons/icon-72x72.png" />
     <link rel="preconnect" href="https://fonts.gstatic.com" />
