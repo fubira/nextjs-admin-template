@@ -25,7 +25,7 @@ interface ContentSectionProps {
   sidemenu?: React.ReactNode;
 }
 
-const BasicContentSection: React.FC<ContentSectionProps> = ({ children, className, sidemenu }) => {
+const BasicContentLayout: React.FC<ContentSectionProps> = ({ children, className, sidemenu }) => {
   return (
     <ContentSectionStyle className={className}>
       {sidemenu && <SideMenuStyle>{sidemenu}</SideMenuStyle>}
@@ -34,4 +34,4 @@ const BasicContentSection: React.FC<ContentSectionProps> = ({ children, classNam
   );
 };
 
-export default BasicContentSection;
+export default BasicContentLayout;
