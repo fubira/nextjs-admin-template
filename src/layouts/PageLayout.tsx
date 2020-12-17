@@ -5,10 +5,10 @@ import { Layout, LayoutContent, LayoutContainer, LayoutColumns, LayoutColumn } f
 import icons from '@paljs/icons';
 
 import themes from 'themes';
-import BaseStyle from './BaseStyle';
-import HtmlHead from './HtmlHead';
-import StickyHeader from './StickyHeader';
-import PageFooter from './PageFooter';
+import BaseStyle from 'layouts/BaseStyle';
+import HtmlHead from 'layouts/HtmlHead';
+import StickyHeader from 'layouts/StickyHeader';
+import PageFooter from 'layouts/PageFooter';
 
 const getDefaultTheme = (): DefaultTheme['name'] => {
   return localStorage.getItem('theme') as DefaultTheme['name'];

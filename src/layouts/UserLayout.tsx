@@ -19,10 +19,10 @@ import { Menu, MenuRefObject } from '@paljs/ui/Menu';
 import Link from 'next/link';
 import menuItems from '../menuItem';
 
-import HtmlHead, { HtmlHeadProps } from './HtmlHead';
-import StickyHeader from './StickyHeader';
-import PageFooter from './PageFooter';
-import BaseStyle from './BaseStyle';
+import HtmlHead, { HtmlHeadProps } from 'layouts/HtmlHead';
+import StickyHeader from 'layouts/StickyHeader';
+import PageFooter from 'layouts/PageFooter';
+import BaseStyle from 'layouts/BaseStyle';
 
 const getDefaultTheme = (): DefaultTheme['name'] => {
   if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
