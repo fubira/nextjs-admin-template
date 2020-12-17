@@ -10,18 +10,50 @@ import Container from '@paljs/ui/Container';
 import Row from '@paljs/ui/Row';
 import Col from '@paljs/ui/Col';
 
-import Copyright from '../../components/Copyright/index';
 import { breakpointDown } from '@paljs/ui/breakpoints';
+
+const footerMenuItems: {
+  left: MenuItemType[];
+  center: MenuItemType[];
+  right: MenuItemType[];
+} = {
+  left: [
+    {
+      title: 'キーワードで探す',
+      link: { href: '/help' },
+    },
+    {
+      title: 'タグで探す',
+      link: { href: '/form' },
+    },
+    {
+      title: '達成間近',
+      link: { href: '/form' },
+    },
+  ],
+  center: [
+    {
+      title: 'ヘルプ',
+      link: { href: '/help' },
+    },
+    {
+      title: 'お問い合わせ',
+      link: { href: '/form' },
+    },
+  ],
+  right: [
+    {
+      title: 'About Us',
+      link: { href: '/aboutus' },
+    },
+  ],
+};
 
 const PageFooterStyle = styled.div``;
 
 const BlockStyle = styled.div`
   display: block;
   width: 100%;
-`;
-
-const FooterMenuStyle = styled.div`
-  margin-bottom: 2em;
 `;
 
 const FooterInfoStyle = styled.div`
@@ -58,51 +90,6 @@ const FooterInfoStyle = styled.div`
   }
 `;
 
-const leftMenuItems: MenuItemType[] = [
-  {
-    title: 'キーワードで探す',
-    link: { href: '/help' },
-  },
-  {
-    title: 'タグで探す',
-    link: { href: '/form' },
-  },
-  {
-    title: '達成間近',
-    link: { href: '/form' },
-  },
-];
-
-const centerMenuItems: MenuItemType[] = [
-  {
-    title: 'ヘルプ',
-    link: { href: '/help' },
-  },
-  {
-    title: 'お問い合わせ',
-    link: { href: '/form' },
-  },
-];
-
-const rightMenuItems: MenuItemType[] = [
-  {
-    title: 'About Us',
-    link: { href: '/aboutus' },
-  },
-  {
-    title: 'テスト1',
-    link: { href: '/form' },
-  },
-  {
-    title: 'テスト2',
-    link: { href: '/form' },
-  },
-  {
-    title: 'テスト3',
-    link: { href: '/form' },
-  },
-];
-
 const actionItems: ActionType[] = [
   {
     content: (
@@ -133,39 +120,68 @@ const actionItems: ActionType[] = [
   },
 ];
 
+const FooterMenu: React.FC<{
+  ref: React.RefObject<MenuRefObject> | null;
+  link: any;
+}> = ({ ref, link }) => {
+  const FooterMenuStyle = styled.div`
+    margin-bottom: 1.5em;
+
+    .footer-menu {
+      padding: 0.5em;
+    }
+  `;
+
+  return (
+    <FooterMenuStyle>
+      <Container fluid>
+        <Row>
+          <Col breakPoint={{ xs: 12, sm: 4, md: 4 }}>
+            <Menu className="footer-menu" nextJs ref={ref} Link={link} currentPath="/" items={footerMenuItems.left} />
+          </Col>
+          <Col breakPoint={{ xs: 12, sm: 4, md: 4 }}>
+            <Menu className="footer-menu" nextJs ref={ref} Link={link} currentPath="/" items={footerMenuItems.center} />
+          </Col>
+          <Col breakPoint={{ xs: 12, sm: 4, md: 4 }}>
+            <Menu className="footer-menu" nextJs ref={ref} Link={link} currentPath="/" items={footerMenuItems.right} />
+          </Col>
+        </Row>
+      </Container>
+    </FooterMenuStyle>
+  );
+};
+
+const Copyright: React.FC = () => {
+  const CopyrightStyle = styled.div`
+    white-space: nowrap;
+  `;
+
+  return (
+    <CopyrightStyle>
+      <p>&copy; 2020 CODEARTS</p>
+    </CopyrightStyle>
+  );
+};
+
 export interface PageFooterProps {
   className?: string;
 }
 
 const PageFooter: React.FC<PageFooterProps> = ({ className }) => {
-  const menuRef = useRef<MenuRefObject>(null);
+  const ref = useRef<MenuRefObject>(null);
 
   return (
     <PageFooterStyle className={className}>
       <LayoutFooter>
         <BlockStyle>
-          <FooterMenuStyle>
-            <Container fluid>
-              <Row>
-                <Col breakPoint={{ xs: 12, sm: 4, md: 4 }}>
-                  <Menu nextJs ref={menuRef} Link={Link} currentPath="/" items={leftMenuItems} />
-                </Col>
-                <Col breakPoint={{ xs: 12, sm: 4, md: 4 }}>
-                  <Menu nextJs ref={menuRef} Link={Link} currentPath="/" items={centerMenuItems} />
-                </Col>
-                <Col breakPoint={{ xs: 12, sm: 4, md: 4 }}>
-                  <Menu nextJs ref={menuRef} Link={Link} currentPath="/" items={rightMenuItems} />
-                </Col>
-              </Row>
-            </Container>
-          </FooterMenuStyle>
+          <FooterMenu ref={ref} link={Link} />
 
           <FooterInfoStyle>
             <div className="right">
               <Actions nextJs Link={Link} size="Small" actions={actionItems} />
             </div>
             <div className="left">
-              <Copyright></Copyright>
+              <Copyright />
             </div>
           </FooterInfoStyle>
         </BlockStyle>

@@ -3,11 +3,11 @@ import styled from 'styled-components';
 
 const HeroStyle = styled.div`
   position: relative;
-  margin-bottom: 48px;
+  margin-bottom: 3rem;
 `;
 
-const HeroChildrenStyle = styled.div<{ src?: string }>`
-  ${({ src }) => (src ? `background: url(${src}) 50% 50% / cover no-repeat` : '')};
+const HeroContentStyle = styled.div<{ image?: string }>`
+  ${({ image }) => (image ? `background: url(${image}) 50% 50% / cover no-repeat` : '')};
   position: relative;
 `;
 
@@ -18,7 +18,7 @@ interface HeroProps {
 const Hero: React.FC<HeroProps> = ({ className, src, children }) => {
   return (
     <HeroStyle className={className}>
-      <HeroChildrenStyle src={src}>{children}</HeroChildrenStyle>
+      <HeroContentStyle image={src}>{children}</HeroContentStyle>
     </HeroStyle>
   );
 };
