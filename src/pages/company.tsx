@@ -7,7 +7,7 @@ import TextPart from 'components/TextPart';
 import InfoPageMenu from 'components/InfoPageMenu';
 import { breakpointDown } from '@paljs/ui/breakpoints';
 
-const TableStyle = styled.div`
+const ContentStyle = styled.div`
   margin: auto;
   padding: 2rem;
   min-width: 320px;
@@ -48,9 +48,9 @@ const TableStyle = styled.div`
 
 export default function Company() {
   return (
-    <PageLayout title="Landing">
+    <PageLayout title="会社概要">
       <BasicContentSection sidemenu={<InfoPageMenu />}>
-        <TableStyle>
+        <ContentStyle>
           <h2>運営会社</h2>
           <TextPart className="text-part">
             <dl>
@@ -82,8 +82,7 @@ export default function Company() {
                 <dd>
                   <ul>
                     <li>ソフトウェア開発</li>
-                    <li>ソフトウェア開発</li>
-                    <li>ソフトウェア開発</li>
+                    <li>ハードウェア開発</li>
                   </ul>
                 </dd>
               </div>
@@ -96,14 +95,14 @@ export default function Company() {
                   <p>取締役</p>
                 </dd>
                 <dd>
-                  <p>鈴木 二郎</p>
-                  <p>田中 将太</p>
-                  <p>西出 輝裕</p>
+                  <p>鈴木 十朗</p>
+                  <p>松坂 太輔</p>
+                  <p>梵 心英</p>
                 </dd>
               </div>
             </dl>
           </TextPart>
-        </TableStyle>
+        </ContentStyle>
       </BasicContentSection>
     </PageLayout>
   );
