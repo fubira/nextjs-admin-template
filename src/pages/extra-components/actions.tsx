@@ -1,10 +1,12 @@
+import React from 'react';
+import Link from 'next/link';
+
 import { Actions, ActionType } from '@paljs/ui/Actions';
 import { Card, CardBody } from '@paljs/ui/Card';
 import Row from '@paljs/ui/Row';
 import Col from '@paljs/ui/Col';
-import React from 'react';
-import Link from 'next/link';
-import Layout from 'Layouts/UserLayout';
+
+import Layout from 'layouts/UserLayout';
 
 const ActionsPage = () => {
   const items: ActionType[] = [

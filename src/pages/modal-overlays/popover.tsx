@@ -1,4 +1,7 @@
 import React from 'react';
+import Link from 'next/link';
+import { useRouter } from 'next/router';
+
 import ContextMenu from '@paljs/ui/ContextMenu';
 import Col from '@paljs/ui/Col';
 import Row from '@paljs/ui/Row';
@@ -6,10 +9,8 @@ import Popover from '@paljs/ui/Popover';
 import { Tabs, Tab } from '@paljs/ui/Tabs';
 import { Card, CardBody } from '@paljs/ui/Card';
 import { Button } from '@paljs/ui/Button';
-import Link from 'next/link';
 
-import Layout from 'Layouts/UserLayout';
-import { useRouter } from 'next/router';
+import Layout from 'layouts/UserLayout';
 
 export default function PopoverPage() {
   const router = useRouter();

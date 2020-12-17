@@ -1,10 +1,12 @@
+import React from 'react';
+
 import Row from '@paljs/ui/Row';
 import Col from '@paljs/ui/Col';
 import Tooltip from '@paljs/ui/Tooltip';
 import { Card, CardBody } from '@paljs/ui/Card';
 import { Button } from '@paljs/ui/Button';
-import React from 'react';
-import Layout from 'Layouts/UserLayout';
+
+import Layout from 'layouts/UserLayout';
 
 export default function TooltipPage() {
   return (

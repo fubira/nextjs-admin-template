@@ -1,4 +1,6 @@
 import React, { useRef, useState } from 'react';
+import styled from 'styled-components';
+
 import { Toastr, ToastrRef, ToastrProps } from '@paljs/ui/Toastr';
 import Row from '@paljs/ui/Row';
 import Col from '@paljs/ui/Col';
@@ -7,8 +9,8 @@ import { Button } from '@paljs/ui/Button';
 import { Checkbox } from '@paljs/ui/Checkbox';
 import { InputGroup } from '@paljs/ui/Input';
 import Select from '@paljs/ui/Select';
-import styled from 'styled-components';
-import Layout from 'Layouts/UserLayout';
+
+import Layout from 'layouts/UserLayout';
 
 const SelectStyled = styled(Select)`
   margin-bottom: 1rem;

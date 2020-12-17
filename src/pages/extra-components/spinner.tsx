@@ -1,11 +1,13 @@
+import React, { useState } from 'react';
+
 import { Button } from '@paljs/ui/Button';
 import Spinner from '@paljs/ui/Spinner';
 import { Tabs, Tab } from '@paljs/ui/Tabs';
 import Row from '@paljs/ui/Row';
 import Col from '@paljs/ui/Col';
 import { Card, CardBody } from '@paljs/ui/Card';
-import React, { useState } from 'react';
-import Layout from 'Layouts/UserLayout';
+
+import Layout from 'layouts/UserLayout';
 
 const SpinnerPage = () => {
   const [show, setShow] = useState(false);

@@ -4,13 +4,13 @@ import styled, { css } from 'styled-components';
 const ContainerStyle = styled.div`
   ${({ theme }) => css`
     box-shadow: ${theme.shadow};
+    background: ${theme.backgroundBasicColor1};
   `}
-  margin-top: 1.5rem;
-  margin-bottom: 1.5rem;
+
+  margin: 1.5rem 0;
   padding: 1.5rem;
 
   word-break: normal;
-  background: white;
   border-radius: 4px;
 
   .description {
@@ -18,12 +18,12 @@ const ContainerStyle = styled.div`
   }
 `;
 
-interface PartProps {
+interface TextPartProps {
   className?: string;
   title?: string;
 }
 
-const Part: React.FC<PartProps> = ({ className, title, children }) => {
+const TextPart: React.FC<TextPartProps> = ({ className, title, children }) => {
   return (
     <ContainerStyle className={className}>
       <h3>{title}</h3>
@@ -32,4 +32,4 @@ const Part: React.FC<PartProps> = ({ className, title, children }) => {
   );
 };
 
-export default Part;
+export default TextPart;

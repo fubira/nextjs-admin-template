@@ -1,9 +1,11 @@
+import React from 'react';
+
 import Alert from '@paljs/ui/Alert';
 import { Card, CardBody } from '@paljs/ui/Card';
 import Row from '@paljs/ui/Row';
 import Col from '@paljs/ui/Col';
-import React from 'react';
-import Layout from 'Layouts/UserLayout';
+
+import Layout from 'layouts/UserLayout';
 
 const alert = () => {
   return (

@@ -1,8 +1,10 @@
 /* eslint-disable @typescript-eslint/explicit-module-boundary-types */
 import React from 'react';
+
 import { Card, CardBody } from '@paljs/ui/Card';
-import Layout from 'Layouts/UserLayout';
 import { Editor } from '@tinymce/tinymce-react';
+
+import Layout from 'layouts/UserLayout';
 
 export default function TinyMCE() {
   const handleEditorChange = (content: any, _editor: any) => {

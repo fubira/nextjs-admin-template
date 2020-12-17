@@ -1,12 +1,13 @@
-import { Button } from '@paljs/ui/Button';
-import { InputGroup } from '@paljs/ui/Input';
-import { Checkbox } from '@paljs/ui/Checkbox';
 import React from 'react';
 import Link from 'next/link';
 
+import { Button } from '@paljs/ui/Button';
+import { InputGroup } from '@paljs/ui/Input';
+import { Checkbox } from '@paljs/ui/Checkbox';
+
 import Auth, { Group } from 'components/Auth';
 import Socials from 'components/Auth/Socials';
-import PageLayout from 'Layouts/PageLayout';
+import PageLayout from 'layouts/PageLayout';
 
 export default function Login() {
   const onCheckbox = () => {

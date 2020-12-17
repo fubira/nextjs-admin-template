@@ -6,10 +6,10 @@ import Link from 'next/link';
 import { Menu, MenuRefObject } from '@paljs/ui/Menu';
 import { MenuItemType } from '@paljs/ui/types';
 
-import PageLayout from 'Layouts/PageLayout';
-import ContentSection from 'Layouts/ContentSection';
-import MenuSection from 'Layouts/MenuSection/index';
-import Part from '../components/Part/index';
+import PageLayout from 'layouts/PageLayout';
+import ContentSection from 'layouts/ContentSection';
+import MenuSection from 'layouts/MenuSection/index';
+import Part from '../layouts/TextPart/index';
 
 const FlexContentStyle = styled.div`
   display: flex;

@@ -20,8 +20,8 @@ import { Menu, MenuRefObject } from '@paljs/ui/Menu';
 import Link from 'next/link';
 import menuItems from '../menuItem';
 import HtmlHead, { HtmlHeadProps } from './HtmlHead';
-import StickyHeader from './StickyHeader';
-import PageFooter from './PageFooter';
+import StickyHeader from '../components/header/StickyHeader';
+import PageFooter from '../components/footer/PageFooter';
 
 const getDefaultTheme = (): DefaultTheme['name'] => {
   if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {

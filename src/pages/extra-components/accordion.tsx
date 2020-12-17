@@ -1,10 +1,12 @@
+import React, { useRef } from 'react';
+
 import { Accordion, AccordionItem, AccordionRefObject } from '@paljs/ui/Accordion';
 import { Button } from '@paljs/ui/Button';
 import { Card, CardBody } from '@paljs/ui/Card';
 import Row from '@paljs/ui/Row';
 import Col from '@paljs/ui/Col';
-import React, { useRef } from 'react';
-import Layout from 'Layouts/UserLayout';
+
+import Layout from 'layouts/UserLayout';
 
 const Accordions = () => {
   const accordionRef = useRef<AccordionRefObject>(null);

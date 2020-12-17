@@ -1,37 +1,28 @@
 import React, { useEffect } from 'react';
-import { InferGetServerSidePropsType } from 'next';
-
-// import { useRouter } from 'next/router';
-import PageLayout from 'Layouts/PageLayout';
-import Hero from 'components/Hero';
-import ProjectCard from 'components/ProjectCard';
 import styled from 'styled-components';
+
+import { InferGetServerSidePropsType } from 'next';
+// import { useRouter } from 'next/router';
+
 import { breakpointUp } from '@paljs/ui/breakpoints';
 import Container from '@paljs/ui/Container';
 import Row from '@paljs/ui/Row';
 import Col from '@paljs/ui/Col';
+
+import PageLayout from 'layouts/PageLayout';
+import Hero from 'components/Hero';
+import ProjectCard from 'components/ProjectCard';
 
 const HeroContentStyle = styled.div`
   margin: 0 auto;
   width: 90%;
   max-width: 1000px;
 
-  padding-top: 120px;
-  padding-bottom: 130px;
+  padding: 120px 0;
 
-  ${breakpointUp('sm')`
-    padding-top: 150px;
-    padding-bottom: 160px;
-  `}
-
-  ${breakpointUp('md')`
-    padding-top: 180px;
-    padding-bottom: 190px;
-  `}
-  ${breakpointUp('lg')`
-    padding-top: 210px;
-    padding-bottom: 230px;
-  `}
+  ${breakpointUp('sm')` padding: 150px 0; `}
+  ${breakpointUp('md')` padding: 180px 0; `}
+  ${breakpointUp('lg')` padding: 210px 0; `}
 
   .slogan {
     margin-bottom: 0.4em;

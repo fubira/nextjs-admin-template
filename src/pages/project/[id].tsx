@@ -1,10 +1,10 @@
 import React, { useEffect } from 'react';
+import styled from 'styled-components';
 import { InferGetServerSidePropsType, NextPageContext } from 'next';
 
-import PageLayout from 'Layouts/PageLayout';
-import styled from 'styled-components';
 import Container from '@paljs/ui/Container';
 import Row from '@paljs/ui/Row';
+import PageLayout from 'layouts/PageLayout';
 
 const ContainerContentStyle = styled.span`
   .card {

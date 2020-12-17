@@ -5,10 +5,10 @@ import icons from '@paljs/icons';
 import { useRouter } from 'next/router';
 
 import themes from '../themes';
-import StickyHeader from './StickyHeader';
+import StickyHeader from '../components/StickyHeader';
 import HtmlHead, { HtmlHeadProps } from './HtmlHead';
 import BaseStyle from './BaseStyle';
-import PageFooter from './PageFooter';
+import PageFooter from '../components/PageFooter';
 import styled from 'styled-components';
 
 const getDefaultTheme = (): DefaultTheme['name'] => {

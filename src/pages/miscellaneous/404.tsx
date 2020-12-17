@@ -1,10 +1,11 @@
 import React from 'react';
+import styled from 'styled-components';
+import { useRouter } from 'next/router';
+
 import { Card, CardBody } from '@paljs/ui/Card';
 import { ButtonLink } from '@paljs/ui/Button';
-import styled from 'styled-components';
 
-import Layout from 'Layouts/UserLayout';
-import { useRouter } from 'next/router';
+import Layout from 'layouts/UserLayout';
 
 const ErrorStyle = styled.div`
   width: 100%;

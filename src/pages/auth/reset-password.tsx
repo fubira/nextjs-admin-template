@@ -1,9 +1,11 @@
 import React from 'react';
+
 import { Button } from '@paljs/ui/Button';
 import { InputGroup } from '@paljs/ui/Input';
+
 import Link from 'next/link';
 
-import Layout from 'Layouts/UserLayout';
+import Layout from 'layouts/UserLayout';
 import Auth, { Group } from 'components/Auth';
 
 export default function ResetPassword() {

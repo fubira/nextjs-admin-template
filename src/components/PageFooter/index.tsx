@@ -78,18 +78,18 @@ const footerActionItems: ActionType[] = [
   },
 ];
 
+const FooterMenuStyle = styled.div`
+  margin-bottom: 1.5em;
+
+  .footer-menu-part {
+    padding: 0.5em;
+  }
+`;
+
 const FooterMenu: React.FC<{
   ref: React.RefObject<MenuRefObject> | null;
   link: any;
 }> = ({ ref, link }) => {
-  const FooterMenuStyle = styled.div`
-    margin-bottom: 1.5em;
-
-    .footer-menu-part {
-      padding: 0.5em;
-    }
-  `;
-
   return (
     <FooterMenuStyle>
       <Container fluid>
@@ -130,13 +130,14 @@ const FooterMenu: React.FC<{
   );
 };
 
+const FooterActionStyle = styled.div`
+  margin: 0.5rem 0;
+`;
+
 const FooterAction: React.FC<{
   className: string;
   link: any;
 }> = ({ className, link }) => {
-  const FooterActionStyle = styled.div`
-    margin: 0.5rem 0;
-  `;
   return (
     <FooterActionStyle className={className}>
       <Actions nextJs Link={link} size="Small" actions={footerActionItems} />
@@ -144,12 +145,12 @@ const FooterAction: React.FC<{
   );
 };
 
-const FooterCopyright: React.FC<{ className: string }> = ({ className }) => {
-  const FooterCopyrightStyle = styled.div`
-    margin: 0.5rem 0;
-    white-space: nowrap;
-  `;
+const FooterCopyrightStyle = styled.div`
+  margin: 0.5rem 0;
+  white-space: nowrap;
+`;
 
+const FooterCopyright: React.FC<{ className: string }> = ({ className }) => {
   return (
     <FooterCopyrightStyle className={className}>
       <p>&copy; 2020 CODEARTS</p>

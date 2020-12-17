@@ -1,3 +1,6 @@
+import React, { useState } from 'react';
+import styled from 'styled-components';
+
 import Select from '@paljs/ui/Select';
 import { Radio } from '@paljs/ui/Radio';
 import { Card, CardBody } from '@paljs/ui/Card';
@@ -5,9 +8,8 @@ import { Checkbox } from '@paljs/ui/Checkbox';
 import { InputGroup } from '@paljs/ui/Input';
 import Col from '@paljs/ui/Col';
 import Row from '@paljs/ui/Row';
-import React, { useState } from 'react';
-import styled from 'styled-components';
-import Layout from 'Layouts/UserLayout';
+
+import Layout from 'layouts/UserLayout';
 
 const options = [
   { value: 'chocolate', label: 'Chocolate' },

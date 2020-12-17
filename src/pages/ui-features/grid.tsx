@@ -1,11 +1,12 @@
+import React from 'react';
+import styled, { css } from 'styled-components';
+
 import { Card, CardBody } from '@paljs/ui/Card';
 import { breakpointUp } from '@paljs/ui/breakpoints';
 import Row from '@paljs/ui/Row';
 import Col from '@paljs/ui/Col';
-import styled, { css } from 'styled-components';
-import React from 'react';
 
-import Layout from 'Layouts/UserLayout';
+import Layout from 'layouts/UserLayout';
 
 interface BoxProps {
   nested?: boolean;

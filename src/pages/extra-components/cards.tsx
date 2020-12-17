@@ -1,8 +1,10 @@
+import React from 'react';
+
 import { Card, CardBody, CardHeader, CardFooter } from '@paljs/ui/Card';
 import Row from '@paljs/ui/Row';
 import Col from '@paljs/ui/Col';
-import React from 'react';
-import Layout from 'Layouts/UserLayout';
+
+import Layout from 'layouts/UserLayout';
 
 export default function Cards() {
   return (

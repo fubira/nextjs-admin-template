@@ -1,12 +1,13 @@
-import { Button } from '@paljs/ui/Button';
-import { InputGroup } from '@paljs/ui/Input';
-import { Checkbox } from '@paljs/ui/Checkbox';
 import React from 'react';
 import styled from 'styled-components';
 import Link from 'next/link';
 
+import { Button } from '@paljs/ui/Button';
+import { InputGroup } from '@paljs/ui/Input';
+import { Checkbox } from '@paljs/ui/Checkbox';
+
+import Layout from 'layouts/UserLayout';
 import Auth from 'components/Auth';
-import Layout from 'Layouts/UserLayout';
 import Socials from 'components/Auth/Socials';
 
 const Input = styled(InputGroup)`

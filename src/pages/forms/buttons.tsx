@@ -1,11 +1,13 @@
+import React from 'react';
+import { useRouter } from 'next/router';
+
 import { Status, Size, Shape } from '@paljs/ui/types';
 import { Card, CardBody } from '@paljs/ui/Card';
 import { Button, ButtonLink } from '@paljs/ui/Button';
 import Col from '@paljs/ui/Col';
 import Row from '@paljs/ui/Row';
-import React from 'react';
-import Layout from 'Layouts/UserLayout';
-import { useRouter } from 'next/router';
+
+import Layout from 'layouts/UserLayout';
 
 const style = { marginBottom: '1.5rem' };
 

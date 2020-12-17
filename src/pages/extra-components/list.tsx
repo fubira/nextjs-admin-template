@@ -1,10 +1,12 @@
+import React from 'react';
+
 import { List, ListItem } from '@paljs/ui/List';
 import { Card } from '@paljs/ui/Card';
 import User from '@paljs/ui/User';
 import Row from '@paljs/ui/Row';
 import Col from '@paljs/ui/Col';
-import React from 'react';
-import Layout from 'Layouts/UserLayout';
+
+import Layout from 'layouts/UserLayout';
 
 const ListPage = () => {
   const userList = [

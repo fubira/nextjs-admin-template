@@ -1,9 +1,10 @@
 import React from 'react';
-import { ButtonLink } from '@paljs/ui/Button';
-import { useRouter } from 'next/router';
 import styled from 'styled-components';
 
-import PageLayout from 'Layouts/PageLayout';
+import { useRouter } from 'next/router';
+import { ButtonLink } from '@paljs/ui/Button';
+
+import PageLayout from 'layouts/PageLayout';
 
 const CardStyle = styled.div`
   margin: auto;

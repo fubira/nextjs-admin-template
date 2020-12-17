@@ -1,9 +1,11 @@
+import React, { useState } from 'react';
+
 import { Search, SearchProps } from '@paljs/ui/Search';
 import { Card, CardBody } from '@paljs/ui/Card';
 import Row from '@paljs/ui/Row';
 import Col from '@paljs/ui/Col';
-import React, { useState } from 'react';
-import Layout from 'Layouts/UserLayout';
+
+import Layout from 'layouts/UserLayout';
 
 export default function SearchPage() {
   const [value, setValue] = useState('');

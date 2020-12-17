@@ -1,10 +1,11 @@
+import React, { useState } from 'react';
+
 import { Chat, ChatForm, ChatMessages, MessageProps, AttachedFile } from '@paljs/ui/Chat';
 import { Card, CardBody } from '@paljs/ui/Card';
 import Row from '@paljs/ui/Row';
 import Col from '@paljs/ui/Col';
-import React, { useState } from 'react';
 
-import Layout from 'Layouts/UserLayout';
+import Layout from 'layouts/UserLayout';
 import defaultMessages from 'data/messages';
 
 export default function ChatPage() {

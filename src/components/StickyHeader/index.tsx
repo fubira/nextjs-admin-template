@@ -8,8 +8,8 @@ import ContextMenu from '@paljs/ui/ContextMenu';
 import User from '@paljs/ui/User';
 import { breakpointDown } from '@paljs/ui/breakpoints';
 
-import Logo from '../../components/Logo';
-import SearchInput from '../../components/SearchInput';
+import Logo from '../Logo';
+import SearchInput from '../SearchInput';
 
 const StickyHeaderStyle = styled.div`
   position: sticky;
