@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 import PageLayout from 'layouts/PageLayout';
-import BasicContentSection from 'layouts/BasicContentSection';
+import ContentLayout from 'layouts/BasicContentLayout';
 import InfoPageMenu from 'components/InfoPageMenu';
 import TextPart from 'components/TextPart';
 
@@ -15,7 +15,7 @@ const ContentStyle = styled.div`
 export default function Terms() {
   return (
     <PageLayout title="プライバシーポリシー">
-      <BasicContentSection sidemenu={<InfoPageMenu />}>
+      <ContentLayout sidemenu={<InfoPageMenu />}>
         <ContentStyle>
           <h2>利用規約</h2>
           <TextPart title="項目1"> 内容1 </TextPart>
@@ -23,7 +23,7 @@ export default function Terms() {
           <TextPart title="項目3"> 内容3 </TextPart>
           <TextPart title="項目4"> 内容4 </TextPart>
         </ContentStyle>
-      </BasicContentSection>
+      </ContentLayout>
     </PageLayout>
   );
 }

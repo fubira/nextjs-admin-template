@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 import PageLayout from 'layouts/PageLayout';
-import BasicContentSection from 'layouts/BasicContentSection';
+import ContentLayout from 'layouts/BasicContentLayout';
 import TextPart from 'components/TextPart';
 import InfoPageMenu from 'components/InfoPageMenu';
 import { breakpointDown } from '@paljs/ui/breakpoints';
@@ -10,7 +10,6 @@ import { breakpointDown } from '@paljs/ui/breakpoints';
 const ContentStyle = styled.div`
   margin: auto;
   padding: 2rem;
-  min-width: 320px;
 
   dl {
     display: table;
@@ -49,7 +48,7 @@ const ContentStyle = styled.div`
 export default function Company() {
   return (
     <PageLayout title="会社概要">
-      <BasicContentSection sidemenu={<InfoPageMenu />}>
+      <ContentLayout sidemenu={<InfoPageMenu />}>
         <ContentStyle>
           <h2>運営会社</h2>
           <TextPart className="text-part">
@@ -103,7 +102,7 @@ export default function Company() {
             </dl>
           </TextPart>
         </ContentStyle>
-      </BasicContentSection>
+      </ContentLayout>
     </PageLayout>
   );
 }
