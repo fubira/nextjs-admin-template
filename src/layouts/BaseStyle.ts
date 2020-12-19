@@ -54,7 +54,6 @@ ${({ theme }) => css`
   ul li,
   ol li {
     padding-left: 0.2rem;
-    padding-bottom: 0.6rem;
   }
 
   aside.settings-sidebar {
