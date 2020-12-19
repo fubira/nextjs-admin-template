@@ -15,26 +15,46 @@ ${({ theme }) => css`
   h1 {
     font-size: 24px;
     margin: 0;
+    padding-bottom: 1.2rem;
   }
 
   h2 {
     font-size: 20px;
+    padding-bottom: 0.8rem;
   }
 
   h3 {
     font-size: 16px;
+    padding-bottom: 0.4rem;
   }
 
   h4 {
     font-size: 14px;
+    padding-bottom: 0.2rem;
   }
 
   h5 {
     font-size: 13px;
+    margin-bottom: 0.1rem;
   }
 
   a {
     text-decoration: none;
+  }
+
+  p {
+    padding-bottom: 0.6rem;
+  }
+
+  ul,
+  ol {
+    margin: 1rem 1rem;
+    padding-left: 1.2rem;
+  }
+  ul li,
+  ol li {
+    padding-left: 0.2rem;
+    padding-bottom: 0.6rem;
   }
 
   aside.settings-sidebar {

@@ -34,6 +34,7 @@ interface InfoPageMenuProps {
 const InfoPageMenu: React.FC<InfoPageMenuProps> = ({ className }) => {
   const router = useRouter();
   const menuRef = useRef<MenuRefObject>(null);
+  console.log(router, menuRef);
 
   return (
     <InfoPageMenuStyle className={className}>
