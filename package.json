@@ -15,6 +15,7 @@
     "next": "^9.5.5",
     "react": "16.13.1",
     "react-dom": "16.13.1",
+    "react-responsive-carousel": "^3.2.11",
     "ress": "^3.0.0",
     "styled-components": "5.2.0"
   },

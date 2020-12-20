@@ -1,7 +1,8 @@
 const MockData = [
   {
     id: '1',
-    title: 'ファンド1',
+    title: '新世代のスマートウォッチ',
+    company: '株式会社あいうえお',
     image:
       'https://images.unsplash.com/photo-1519335553051-96f1218cd5fa?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=320&ixlib=rb-1.2.1&q=80&w=480',
     description: '新世代のスマートウォッチ',
@@ -34,6 +35,7 @@ const MockData = [
   {
     id: '2',
     title: 'ファンド2',
+    company: '株式会社かきくけこ',
     image:
       'https://images.unsplash.com/photo-1521120413309-42e7eada0334?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=320&ixlib=rb-1.2.1&q=80&w=480',
     description: 'まったく新しいスマートフォンスタンド',
@@ -51,6 +53,7 @@ const MockData = [
   {
     id: '3',
     title: 'ファンド3',
+    company: '株式会社さしすせそ',
     image:
       'https://images.unsplash.com/photo-1542751110-97427bbecf20?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=320&ixlib=rb-1.2.1&q=80&w=480',
     description: '世界一軽いタブレット',
@@ -67,6 +70,7 @@ const MockData = [
   {
     id: '4',
     title: 'ファンド4',
+    company: '株式会社たちつてと',
     image:
       'https://images.unsplash.com/photo-1542751110-97427bbecf20?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=320&ixlib=rb-1.2.1&q=80&w=480',
     description:

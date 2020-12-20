@@ -3,23 +3,24 @@ import styled from 'styled-components';
 import Progress from 'components/Progress';
 import dayjs from 'dayjs';
 
+import 'react-responsive-carousel/lib/styles/carousel.min.css';
+import { Carousel } from 'react-responsive-carousel';
+
 import { Card } from '@paljs/ui/Card';
 import { EvaIcon } from '@paljs/ui/Icon';
 
-const CardStyle = styled.div`
+const DetailStyle = styled.div`
   a {
     text-decoration: none;
   }
 `;
 
-const CardImageStyle = styled.div<{ isNew?: boolean }>`
-  position: relative;
-  height: 200px;
-  img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: 0;
+const DetailImageStyle = styled.div`
+  display: inline-block;
+  max-width: 600px;
+  max-height: 300px;
+  .carousel .slide {
+    padding: 0;
   }
 `;
 
@@ -34,7 +35,19 @@ const CardDescriptionStyle = styled.div`
   -webkit-box-orient: vertical;
 `;
 
-const CardInformationStyle = styled.div`
+const DetailHeaderStyle = styled.div`
+  margin 1rem 1rem;
+  text-align: center;
+`;
+
+const DetailCompanyStyle = styled.div`
+  display: inline-flex;
+  align-items: center;
+  color: #888;
+  margin 0 1rem;
+`;
+
+const DetailInformationStyle = styled.div`
   margin: 1rem 1rem;
 
   .icon {
@@ -59,24 +72,46 @@ interface ProjectDetailProps {
 
 const ProjectDetail: React.FC<ProjectDetailProps> = ({ project }) => {
   return (
-    <CardStyle>
+    <DetailStyle>
+      <DetailHeaderStyle>
+        <h1>{project.title}</h1>
+        <DetailCompanyStyle>
+          <EvaIcon name="person"></EvaIcon>
+          {project.company}
+        </DetailCompanyStyle>
+      </DetailHeaderStyle>
+
+      <DetailInformationStyle>
+        <DetailImageStyle>
+          <Carousel autoPlay infiniteLoop interval={10000}>
+            <div>
+              <img src={project.image} />
+            </div>
+            <div>
+              <img src={project.image} />
+            </div>
+            <div>
+              <img src={project.image} />
+            </div>
+          </Carousel>
+        </DetailImageStyle>
+        <DetailImageStyle>
+          <p>現在の支援総額</p>
+        </DetailImageStyle>
+      </DetailInformationStyle>
+
       <Card>
-        <CardImageStyle isNew={project.new}>
-          <img src={project.image} alt={project.description} />
-        </CardImageStyle>
         <CardDescriptionStyle> {project.description} </CardDescriptionStyle>
-        <CardInformationStyle>
-          <span className="time">
-            <span className="icon">
-              <EvaIcon name="clock-outline" />
-            </span>
-            {dayjs(project.expiredAt).fromNow()}
+        <span className="time">
+          <span className="icon">
+            <EvaIcon name="clock-outline" />
           </span>
-          <span className="money"> {Intl.NumberFormat().format(project.status.prices || 0)} 円</span>
-        </CardInformationStyle>
+          {dayjs(project.expiredAt).fromNow()}
+        </span>
+        <span className="money"> {Intl.NumberFormat().format(project.status.prices || 0)} 円</span>
         <Progress value={project.status.progress} />
       </Card>
-    </CardStyle>
+    </DetailStyle>
   );
 };
 
