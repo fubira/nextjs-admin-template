@@ -5,6 +5,7 @@ import { EvaIcon } from '@paljs/ui/Icon';
 
 const BackToTopStyle = styled.div<{ show?: boolean }>`
   visibility: ${({ show }) => (show ? 'visible' : 'hidden')};
+  display: flex;
   position: sticky;
   z-index: 1000;
   width: 60px;
