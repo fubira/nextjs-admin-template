@@ -1,8 +1,7 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 
-import { InferGetServerSidePropsType } from 'next';
-// import { useRouter } from 'next/router';
+import { InferGetServerSidePropsType, GetServerSideProps } from 'next';
 
 import { breakpointUp } from '@paljs/ui/breakpoints';
 import Container from '@paljs/ui/Container';
@@ -68,7 +67,7 @@ function getApiUrl() {
   return url;
 }
 
-export async function getServerSideProps() {
+export const getServerSideProps: GetServerSideProps = async () => {
   const res = await fetch(`${getApiUrl()}/api/project/latest`);
   const projects = await res.json();
 
@@ -77,16 +76,9 @@ export async function getServerSideProps() {
       projects,
     },
   };
-}
+};
 
 export default function Index(props: InferGetServerSidePropsType<typeof getServerSideProps>) {
-  console.log(props);
-  // const router = useRouter();
-  useEffect(() => {
-    // router.push('/');
-  }),
-    [];
-
   const ProjectCards = props.projects.map((project: any) => {
     return (
       <Col key={project.id} breakPoint={{ xs: 12, sm: 6, md: 4, lg: 3 }}>

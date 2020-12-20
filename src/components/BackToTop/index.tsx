@@ -16,8 +16,8 @@ const BackToTopStyle = styled.div<{ show?: boolean }>`
   justify-content: center;
 
   cursor: pointer;
-  animation: fadeIn 0.2s;
-  transition: opacity 0.2s;
+  animation: fadeIn 0.5s;
+  transition: opacity 0.5s;
   opacity: 0.8;
 
   span {

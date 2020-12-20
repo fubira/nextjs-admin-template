@@ -1,19 +1,13 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import styled from 'styled-components';
-import { InferGetServerSidePropsType, NextPageContext } from 'next';
+import { GetServerSideProps, InferGetServerSidePropsType } from 'next';
 
 import Container from '@paljs/ui/Container';
-import Row from '@paljs/ui/Row';
-import PageLayout from 'layouts/PageLayout';
 
-const ContainerContentStyle = styled.span`
-  .card {
-    img {
-      height: 200px;
-      object-fit: cover;
-    }
-  }
-`;
+import PageLayout from 'layouts/PageLayout';
+import ProjectDetail from 'components/ProjectDetail/index';
+
+const ContainerContentStyle = styled.span``;
 
 function getApiUrl() {
   let url = process.env.NEXT_PUBLIC_VERCEL_URL || 'http://localhost:3000';
@@ -23,32 +17,25 @@ function getApiUrl() {
   return url;
 }
 
-export async function getServerSideProps(context: NextPageContext) {
+export const getServerSideProps: GetServerSideProps = async (context) => {
   const { id } = context.query;
   const res = await fetch(`${getApiUrl()}/api/project/get?id=${id}`);
   const project = await res.json();
 
   return {
     props: {
-      test: 'test',
       project,
     },
   };
-}
+};
 
-export default function Index(props: InferGetServerSidePropsType<typeof getServerSideProps>) {
-  // const router = useRouter();
-  useEffect(() => {
-    // router.push('/');
-  }),
-    [];
-
+export default function Project(props: InferGetServerSidePropsType<typeof getServerSideProps>) {
   console.log(props);
   return (
     <PageLayout title="Landing">
       <ContainerContentStyle>
         <Container>
-          <Row></Row>
+          <ProjectDetail project={props.project} />
         </Container>
       </ContainerContentStyle>
     </PageLayout>
