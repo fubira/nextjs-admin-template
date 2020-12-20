@@ -6,6 +6,7 @@ import ContentLayout from 'layouts/BasicContentLayout';
 import TextPart from 'components/TextPart';
 import InfoPageMenu from 'components/InfoPageMenu';
 import { breakpointDown } from '@paljs/ui/breakpoints';
+import { useRouter } from 'next/router';
 
 const ContentStyle = styled.div`
   margin: auto;
@@ -46,9 +47,11 @@ const ContentStyle = styled.div`
 `;
 
 export default function Company() {
+  const router = useRouter();
+
   return (
     <PageLayout title="会社概要">
-      <ContentLayout sidemenu={<InfoPageMenu />}>
+      <ContentLayout sidemenu={<InfoPageMenu currentPath={router.pathname} />}>
         <ContentStyle>
           <h2>運営会社</h2>
           <TextPart className="text-part">

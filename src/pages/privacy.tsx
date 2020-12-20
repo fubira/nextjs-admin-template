@@ -1,5 +1,5 @@
 import React from 'react';
-// import { useRouter } from 'next/router';
+import { useRouter } from 'next/router';
 import styled from 'styled-components';
 
 import PageLayout from 'layouts/PageLayout';
@@ -12,9 +12,11 @@ const ContentStyle = styled.div`
 `;
 
 export default function Privacy() {
+  const router = useRouter();
+
   return (
     <PageLayout title="プライバシーポリシー">
-      <ContentLayout sidemenu={<InfoPageMenu />}>
+      <ContentLayout sidemenu={<InfoPageMenu currentPath={router.pathname} />}>
         <ContentStyle>
           <h2>プライバシーポリシー</h2>
           <p>

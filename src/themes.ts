@@ -6,6 +6,7 @@ const shared: Partial<DefaultTheme> = {
   headerHeight: '4rem',
   sidebarHeaderGap: '1rem',
   footerPadding: '1rem',
+  layoutBackgroundColor: '#fcfcfc',
   textParagraphLineHeight: '1.4rem',
   fontFamilyPrimary: `-apple-system, BlinkMacSystemFont,
           "Open Sans", "Helvetica Neue", Arial, sans-serif,

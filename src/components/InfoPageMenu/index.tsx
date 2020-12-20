@@ -1,7 +1,6 @@
 import React, { useRef } from 'react';
 import styled from 'styled-components';
 import Link from 'next/link';
-import { useRouter } from 'next/router';
 
 import { Menu, MenuRefObject } from '@paljs/ui/Menu';
 import { MenuItemType } from '@paljs/ui/types';
@@ -29,16 +28,24 @@ const InfoPageMenuStyle = styled.div`
 
 interface InfoPageMenuProps {
   className?: string;
+  menuRef?: React.RefObject<MenuRefObject>;
+  currentPath: string;
 }
 
-const InfoPageMenu: React.FC<InfoPageMenuProps> = ({ className }) => {
-  const router = useRouter();
+const InfoPageMenu: React.FC<InfoPageMenuProps> = ({ className, currentPath }) => {
   const menuRef = useRef<MenuRefObject>(null);
-  console.log(router, menuRef);
+
+  /* NOTE
+    @pal.js/Menuのselected判定では、Menu自身以外から該当するURLに遷移した場合に
+    正しく現在地を表示しないので強制的に設定する
+  */
+  infoPageMenuItems.forEach((item) => {
+    item.selected = item.link && item.link.href === currentPath;
+  });
 
   return (
     <InfoPageMenuStyle className={className}>
-      <Menu nextJs ref={menuRef} Link={Link} currentPath={router.pathname} items={infoPageMenuItems} />
+      <Menu nextJs ref={menuRef} Link={Link} currentPath={currentPath} items={infoPageMenuItems} />
     </InfoPageMenuStyle>
   );
 };

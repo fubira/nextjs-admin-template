@@ -43,7 +43,7 @@ ${({ theme }) => css`
   }
 
   p {
-    padding-bottom: 0.6rem;
+    padding-bottom: 0.2rem;
   }
 
   ul,
