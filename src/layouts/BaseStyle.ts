@@ -5,31 +5,34 @@ const BaseStyle = createGlobalStyle`
 ${({ theme }) => css`
   ${GlobalStyle}
 
-  body {
-    font-size: 16px;
+  html {
     font-smoothing: antialiased;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smooting: grayscale;
   }
 
+  body {
+    font-size: 16px;
+  }
+
   h1 {
-    font-size: 24px;
+    font-size: 26px;
     margin: 0;
     padding-bottom: 1.2rem;
   }
 
   h2 {
-    font-size: 20px;
+    font-size: 22px;
     padding-bottom: 0.8rem;
   }
 
   h3 {
-    font-size: 16px;
+    font-size: 18px;
     padding-bottom: 0.4rem;
   }
 
   h4 {
-    font-size: 14px;
+    font-size: 15px;
     padding-bottom: 0.2rem;
   }
 

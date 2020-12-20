@@ -9,6 +9,7 @@ import BaseStyle from 'layouts/BaseStyle';
 import HtmlHead from 'layouts/HtmlHead';
 import StickyHeader from 'layouts/StickyHeader';
 import PageFooter from 'layouts/PageFooter';
+import BackToTop from 'components/BackToTop';
 
 const getDefaultTheme = (): DefaultTheme['name'] => {
   return localStorage.getItem('theme') as DefaultTheme['name'];
@@ -49,6 +50,7 @@ const LayoutPage: React.FC<PageLayoutProps> = ({ children, title, description })
                     <LayoutColumn className="main-content">{children}</LayoutColumn>
                   </LayoutColumns>
                 </IE11FlexIsNotKnownMinHeihgtContentSizeBugFixWrapperStyle>
+                <BackToTop />
                 <PageFooter />
               </LayoutContent>
             </LayoutContainer>
