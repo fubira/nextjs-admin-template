@@ -18,12 +18,12 @@ ${({ theme }) => css`
   h1 {
     font-size: 26px;
     margin: 0;
-    padding-bottom: 1.2rem;
+    padding-bottom: 0.6rem;
   }
 
   h2 {
     font-size: 22px;
-    padding-bottom: 0.8rem;
+    padding-bottom: 0.6rem;
   }
 
   h3 {

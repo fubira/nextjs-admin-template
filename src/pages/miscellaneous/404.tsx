@@ -32,7 +32,7 @@ export default function Error() {
           <ErrorStyle>
             <h1>404 Page Not Found</h1>
             <small>The page you were looking for doesn&apos;t exist</small>
-            <ButtonLink fullWidth appearance="hero" onClick={() => router.push('/')} shape="Rectangle">
+            <ButtonLink fullWidth onClick={() => router.push('/')} shape="Rectangle">
               Take me home
             </ButtonLink>
           </ErrorStyle>

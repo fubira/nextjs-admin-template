@@ -2,12 +2,21 @@ import React from 'react';
 import styled from 'styled-components';
 
 import { Card } from '@paljs/ui/Card';
+import User from '@paljs/ui/User';
 
 const CardCompanyInfoStyle = styled.div`
-  margin: 1.5rem;
+  margin: 0.5rem 1.5rem 1.5rem;
   img {
     width: 100%;
     margin-bottom: 0.5rem;
+  }
+`;
+
+const CardCompanyUserStyle = styled.div`
+  margin: 1rem 1rem;
+
+  .user-picture {
+    backgound-color: white;
   }
 `;
 
@@ -23,7 +32,12 @@ interface CompanyCardProps {
 const CompanyCard: React.FC<CompanyCardProps> = ({ className, company }) => {
   return (
     <Card className={className}>
-      <CardCompanyInfoStyle> {company.name} </CardCompanyInfoStyle>
+      <CardCompanyUserStyle>
+        <User image="url('/avatar/avatar-14.png')" color="#440088" shape="Round" size="Giant" name={company.name} />
+      </CardCompanyUserStyle>
+      <CardCompanyInfoStyle>
+        <p>{company.description}</p>
+      </CardCompanyInfoStyle>
     </Card>
   );
 };

@@ -1,11 +1,11 @@
 const MockData = [
   {
     id: '1',
-    title: '新世代のスマートウォッチ',
+    title: 'プロジェクトタイトル：新世代のスマートウォッチ',
     company: {
       companyId: '000',
       image: '',
-      name: '株式会社あいうえお',
+      name: '株式会社ガジェットカンパニージャパン',
       location: '日本',
       description: '主にハードウエアやソフトウエアを開発・販売している会社です。的な説明文',
       social: {
@@ -22,7 +22,8 @@ const MockData = [
       'https://images.unsplash.com/photo-1514218842929-d6b0d653a623?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=480&h=320&q=80',
       'https://images.unsplash.com/photo-1497565998880-bd009060dcd7?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=480&h=320&q=80',
     ],
-    description: '新世代のスマートウォッチ',
+    description:
+      'プロジェクト説明文：まだ誰も見たことのない新世代のスマートウォッチです。みたいなある程度長い文章を入れられる領域として用意したエリアです',
     type: 'all-in',
     createdAt: 0,
     expiredAt: 1639214083000,

@@ -68,7 +68,13 @@ const DetailCompanyStyle = styled.div`
   display: inline-flex;
   align-items: center;
   color: #888;
-  margin 0 1rem;
+  margin: 0 1rem 1rem;
+`;
+const DetailTextStyle = styled.div`
+  margin: 1rem 1rem 2rem;
+
+  font-size: 16px;
+  font-weight: 500;
 `;
 
 const CardDetailDocumentStyle = styled.div`
@@ -120,7 +126,7 @@ const ProjectDetail: React.FC<ProjectDetailProps> = ({ project }) => {
                   })}
                 </Carousel>
               </DetailCarouselStyle>
-              <p>{project.description}</p>
+              <DetailTextStyle> {project.description} </DetailTextStyle>
             </DetailInformationStyle>
           </Col>
           <Col breakPoint={{ xs: 12, sm: 12, md: 4 }}>

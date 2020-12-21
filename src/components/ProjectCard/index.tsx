@@ -41,7 +41,7 @@ const CardImageStyle = styled.div<{ isNew?: boolean }>`
   }
 `;
 
-const CardDescriptionStyle = styled.div`
+const CardTitleStyle = styled.div`
   margin: 1rem 1rem;
   height: 4.2rem;
   font-size: 16px;
@@ -88,9 +88,9 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
         <a>
           <Card>
             <CardImageStyle isNew={project.new}>
-              <img src={project.topImage || project.images[0]} alt={project.description} />
+              <img src={project.topImage || project.images[0]} alt={project.title} />
             </CardImageStyle>
-            <CardDescriptionStyle> {project.description} </CardDescriptionStyle>
+            <CardTitleStyle> {project.title} </CardTitleStyle>
             <CardInformationStyle>
               <span className="time">
                 <span className="icon">
