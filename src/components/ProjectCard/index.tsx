@@ -71,6 +71,10 @@ const CardInformationStyle = styled.div`
   }
 `;
 
+const CardProgressStyle = styled.div`
+  margin: 1rem;
+`;
+
 interface ProjectCardProps {
   project?: any;
 }
@@ -84,7 +88,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
         <a>
           <Card>
             <CardImageStyle isNew={project.new}>
-              <img src={project.image} alt={project.description} />
+              <img src={project.topImage || project.images[0]} alt={project.description} />
             </CardImageStyle>
             <CardDescriptionStyle> {project.description} </CardDescriptionStyle>
             <CardInformationStyle>
@@ -96,7 +100,9 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
               </span>
               <span className="money"> {Intl.NumberFormat().format(project.status.totalPrice || 0)} 円</span>
             </CardInformationStyle>
-            <Progress value={project.status.progress} />
+            <CardProgressStyle>
+              <Progress value={project.status.progress} />
+            </CardProgressStyle>
           </Card>
         </a>
       </Link>
