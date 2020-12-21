@@ -92,9 +92,9 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
                 <span className="icon">
                   <EvaIcon name="clock-outline" />
                 </span>
-                {dayjs(project.expiredAt).fromNow()}
+                {dayjs(project.expiredAt).fromNow(true)}
               </span>
-              <span className="money"> {Intl.NumberFormat().format(project.status.prices || 0)} 円</span>
+              <span className="money"> {Intl.NumberFormat().format(project.status.totalPrice || 0)} 円</span>
             </CardInformationStyle>
             <Progress value={project.status.progress} />
           </Card>

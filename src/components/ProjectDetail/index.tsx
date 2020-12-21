@@ -8,6 +8,10 @@ import { Carousel } from 'react-responsive-carousel';
 
 import { Card } from '@paljs/ui/Card';
 import { EvaIcon } from '@paljs/ui/Icon';
+import Container from '@paljs/ui/Container';
+import Row from '@paljs/ui/Row';
+import Col from '@paljs/ui/Col';
+import { Button } from '@paljs/ui/Button';
 
 const DetailStyle = styled.div`
   a {
@@ -15,12 +19,15 @@ const DetailStyle = styled.div`
   }
 `;
 
-const DetailImageStyle = styled.div`
+const DetailCarouselStyle = styled.div`
   display: inline-block;
-  max-width: 600px;
-  max-height: 300px;
+  max-width: 640px;
+  max-height: 400px;
   .carousel .slide {
     padding: 0;
+  }
+  .carousel .thumbs-wrapper {
+    margin: 5px;
   }
 `;
 
@@ -36,7 +43,7 @@ const CardDescriptionStyle = styled.div`
 `;
 
 const DetailHeaderStyle = styled.div`
-  margin 1rem 1rem;
+  margin 1rem auto;
   text-align: center;
 `;
 
@@ -48,8 +55,6 @@ const DetailCompanyStyle = styled.div`
 `;
 
 const DetailInformationStyle = styled.div`
-  margin: 1rem 1rem;
-
   .icon {
     margin-right: 0.2rem;
   }
@@ -66,51 +71,113 @@ const DetailInformationStyle = styled.div`
   }
 `;
 
+const DetailStateStyle = styled.div``;
+
 interface ProjectDetailProps {
   project?: any;
 }
 
 const ProjectDetail: React.FC<ProjectDetailProps> = ({ project }) => {
+  const Details = project.details.map((detail: any, index: number) => {
+    console.log(detail);
+    return (
+      <Card key={index}>
+        <div> {detail.image || <img src={detail.image} />} </div>
+        <span dangerouslySetInnerHTML={{ __html: detail.html }}></span>
+      </Card>
+    );
+  });
+  console.log(Details);
+
   return (
     <DetailStyle>
-      <DetailHeaderStyle>
-        <h1>{project.title}</h1>
-        <DetailCompanyStyle>
-          <EvaIcon name="person"></EvaIcon>
-          {project.company}
-        </DetailCompanyStyle>
-      </DetailHeaderStyle>
+      <Container>
+        <Row>
+          <DetailHeaderStyle>
+            <h1>{project.title}</h1>
+            <DetailCompanyStyle>
+              <EvaIcon name="person"></EvaIcon>
+              {project.company.name}
+            </DetailCompanyStyle>
+          </DetailHeaderStyle>
+        </Row>
 
-      <DetailInformationStyle>
-        <DetailImageStyle>
-          <Carousel autoPlay infiniteLoop interval={10000}>
-            <div>
-              <img src={project.image} />
-            </div>
-            <div>
-              <img src={project.image} />
-            </div>
-            <div>
-              <img src={project.image} />
-            </div>
-          </Carousel>
-        </DetailImageStyle>
-        <DetailImageStyle>
-          <p>現在の支援総額</p>
-        </DetailImageStyle>
-      </DetailInformationStyle>
+        <Row>
+          <Col breakPoint={{ xs: 12, is: 12, sm: 12, md: 8 }}>
+            <DetailInformationStyle>
+              <DetailCarouselStyle>
+                <Carousel autoPlay infiniteLoop interval={10000}>
+                  <div>
+                    <img src={project.image} />
+                  </div>
+                  <div>
+                    <img src={project.image} />
+                  </div>
+                  <div>
+                    <img src={project.image} />
+                  </div>
+                </Carousel>
+              </DetailCarouselStyle>
+              <p>{project.description}</p>
+            </DetailInformationStyle>
+          </Col>
+          <Col breakPoint={{ xs: 12, md: 4 }}>
+            <DetailStateStyle>
+              <Row>
+                <Col>
+                  <Progress value={project.status.progress} />
+                </Col>
+                <Col breakPoint={{ xs: 6, md: 12 }}>
+                  <span className="icon">
+                    <EvaIcon name="clock-outline" />
+                  </span>
+                  <span>現在の支援総額</span>
+                </Col>
+                <Col breakPoint={{ xs: 6, md: 12 }}>
+                  <span className="money"> {Intl.NumberFormat().format(project.status.totalPrice || 0)} 円</span>
+                </Col>
+              </Row>
+              <Row>
+                <Col breakPoint={{ xs: 6, md: 12 }}>
+                  <span className="icon">
+                    <EvaIcon name="clock-outline" />
+                  </span>
+                  <span>支援者数</span>
+                </Col>
+                <Col breakPoint={{ xs: 6, md: 12 }}>
+                  <span className="money"> {Intl.NumberFormat().format(project.status.totalPrice || 0)} 円</span>
+                </Col>
+              </Row>
+              <Row>
+                <Col breakPoint={{ xs: 6, md: 12 }}>
+                  <span className="icon">
+                    <EvaIcon name="clock-outline" />
+                  </span>
+                  <span>募集終了まで残り</span>
+                </Col>
+                <Col breakPoint={{ xs: 6, md: 12 }}>
+                  <span className="money"> {dayjs(project.expiredAt).fromNow(true)} </span>
+                </Col>
+              </Row>
+              <Row>
+                <Col breakPoint={{ xs: 6, md: 12 }}>
+                  <Button>プロジェクトを支援する</Button>
+                </Col>
+                <Col breakPoint={{ xs: 6, md: 12 }}>
+                  <Button>お気に入り</Button>
+                </Col>
+              </Row>
+            </DetailStateStyle>
+          </Col>
+        </Row>
+      </Container>
 
-      <Card>
-        <CardDescriptionStyle> {project.description} </CardDescriptionStyle>
-        <span className="time">
-          <span className="icon">
-            <EvaIcon name="clock-outline" />
-          </span>
-          {dayjs(project.expiredAt).fromNow()}
-        </span>
-        <span className="money"> {Intl.NumberFormat().format(project.status.prices || 0)} 円</span>
-        <Progress value={project.status.progress} />
-      </Card>
+      <Container>
+        <Row>
+          <Col breakPoint={{ xs: 12, md: 8 }}> {Details} </Col>
+          <Col breakPoint={{ xs: 12, md: 4 }}> {project.company.name} </Col>
+        </Row>
+      </Container>
     </DetailStyle>
   );
 };
