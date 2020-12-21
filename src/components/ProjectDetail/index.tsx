@@ -30,7 +30,7 @@ const DetailCarouselStyle = styled.div`
     margin: 5px;
   }
 `;
-
+/*
 const CardDescriptionStyle = styled.div`
   margin: 1rem 1rem;
   height: 4.2rem;
@@ -41,7 +41,7 @@ const CardDescriptionStyle = styled.div`
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
 `;
-
+*/
 const DetailHeaderStyle = styled.div`
   margin 1rem auto;
   text-align: center;
