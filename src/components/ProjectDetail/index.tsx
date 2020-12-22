@@ -20,6 +20,7 @@ const DetailStyle = styled.div`
 
 const DetailCarouselStyle = styled.div`
   display: inline-block;
+  width: 100%;
   .carousel .slide {
     padding: 0;
   }
@@ -118,7 +119,7 @@ const ProjectDetail: React.FC<ProjectDetailProps> = ({ project }) => {
           <Col breakPoint={{ xs: 12, is: 12, sm: 12, md: 8 }}>
             <DetailInformationStyle>
               <DetailCarouselStyle>
-                <Carousel autoPlay showStatus swipeable={false} interval={10000}>
+                <Carousel autoPlay showStatus={false} swipeable={false} interval={10000}>
                   {project.images.map((src: string, index: number) => {
                     return <img key={index} src={src} />;
                   })}
