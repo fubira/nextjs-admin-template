@@ -76,7 +76,7 @@ const MockData = [
   },
   {
     id: '2',
-    title: 'ファンド2',
+    title: 'プロジェクト2',
     company: {
       companyId: '001',
       image: '',
@@ -132,7 +132,7 @@ const MockData = [
   },
   {
     id: '3',
-    title: 'ファンド3',
+    title: 'プロジェクト3',
     company: {
       companyId: '001',
       image: '',
@@ -187,7 +187,7 @@ const MockData = [
   },
   {
     id: '4',
-    title: 'ファンド4',
+    title: 'プロジェクト4',
     company: {
       companyId: '001',
       image: '',

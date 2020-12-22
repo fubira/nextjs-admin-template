@@ -112,7 +112,7 @@ const ProjectStateCard: React.FC<CompanyCardProps> = ({ className, project }) =>
           </Col>
           <Col breakPoint={{ xs: 12 }}>
             <LineStyle>
-              <span className="value"> {dayjs(project.expiredAt).fromNow(true)} </span>
+              <span className="value"> {dayjs(project.expiredAt).diff(dayjs(), 'day')} 日</span>
             </LineStyle>
           </Col>
         </Row>
