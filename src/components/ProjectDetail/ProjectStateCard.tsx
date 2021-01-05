@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import dayjs from 'dayjs';
 
@@ -63,6 +63,27 @@ interface CompanyCardProps {
 }
 
 const ProjectStateCard: React.FC<CompanyCardProps> = ({ className, project }) => {
+  const [favorite, setFavorite] = useState(false);
+  const onClickHandler = () => {
+    console.log('onClick', favorite);
+    setFavorite(!favorite);
+  };
+
+  const FavButton = (prop: { favorite: boolean }) =>
+    prop.favorite ? (
+      <Button fullWidth appearance="filled" status="Warning" onClick={onClickHandler}>
+        <ButtonTextStyle>
+          <EvaIcon name="heart" /> お気に入り
+        </ButtonTextStyle>
+      </Button>
+    ) : (
+      <Button fullWidth appearance="outline" status="Basic" onClick={onClickHandler}>
+        <ButtonTextStyle>
+          <EvaIcon name="heart-outline" /> お気に入り
+        </ButtonTextStyle>
+      </Button>
+    );
+
   return (
     <Card className={className}>
       <ProjectStateCardStyle>
@@ -129,11 +150,7 @@ const ProjectStateCard: React.FC<CompanyCardProps> = ({ className, project }) =>
           </Col>
           <Col breakPoint={{ xs: 12 }}>
             <LineStyle>
-              <Button fullWidth appearance="outline" status="Warning">
-                <ButtonTextStyle>
-                  <EvaIcon name="heart-outline" /> お気に入り
-                </ButtonTextStyle>
-              </Button>
+              <FavButton favorite={favorite}></FavButton>
             </LineStyle>
           </Col>
         </Row>
