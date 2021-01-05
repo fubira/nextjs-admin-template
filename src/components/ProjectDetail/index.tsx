@@ -2,7 +2,10 @@ import React from 'react';
 import styled from 'styled-components';
 
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
-import { Carousel } from 'react-responsive-carousel';
+/*import { Carousel } from 'react-responsive-carousel';*/
+
+import Carousel from '@brainhubeu/react-carousel';
+import '@brainhubeu/react-carousel/lib/style.css';
 
 import { Card } from '@paljs/ui/Card';
 import { EvaIcon } from '@paljs/ui/Icon';
@@ -99,7 +102,13 @@ const ProjectDetail: React.FC<ProjectDetailProps> = ({ project }) => {
       </Card>
     );
   });
-
+  /*
+                <Carousel autoPlay showStatus={false} swipeable={false} interval={10000}>
+                  {project.images.map((src: string, index: number) => {
+                    return <img key={index} src={src} />;
+                  })}
+                </Carousel>
+  */
   return (
     <DetailStyle>
       <Container>
@@ -119,7 +128,7 @@ const ProjectDetail: React.FC<ProjectDetailProps> = ({ project }) => {
           <Col breakPoint={{ xs: 12, is: 12, sm: 12, md: 8 }}>
             <DetailInformationStyle>
               <DetailCarouselStyle>
-                <Carousel autoPlay showStatus={false} swipeable={false} interval={10000}>
+                <Carousel arrows dots thumbnails>
                   {project.images.map((src: string, index: number) => {
                     return <img key={index} src={src} />;
                   })}
