@@ -128,7 +128,7 @@ const ProjectDetail: React.FC<ProjectDetailProps> = ({ project }) => {
           <Col breakPoint={{ xs: 12, is: 12, sm: 12, md: 8 }}>
             <DetailInformationStyle>
               <DetailCarouselStyle>
-                <Carousel arrows dots thumbnails>
+                <Carousel>
                   {project.images.map((src: string, index: number) => {
                     return <img key={index} src={src} />;
                   })}
