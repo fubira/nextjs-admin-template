@@ -33,7 +33,7 @@ const CompanyCard: React.FC<CompanyCardProps> = ({ className, company }) => {
   return (
     <Card className={className}>
       <CardCompanyUserStyle>
-        <User image="url('/avatar/avatar-14.png')" color="#440088" shape="Round" size="Giant" name={company.name} />
+        <User image="url('/avatar/avatar-15.png')" color="#440088" shape="Round" size="Giant" name={company.name} />
       </CardCompanyUserStyle>
       <CardCompanyInfoStyle>
         <p>{company.description}</p>

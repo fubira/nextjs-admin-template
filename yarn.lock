@@ -1238,10 +1238,10 @@
   dependencies:
     prop-types "^15.6.2"
 
-"@types/brainhubeu__react-carousel@^2.0.2":
-  version "2.0.2"
-  resolved "https://registry.yarnpkg.com/@types/brainhubeu__react-carousel/-/brainhubeu__react-carousel-2.0.2.tgz#f238255f3fecbab98d8a413303b4fa52aa924624"
-  integrity sha512-qmOfB2AcENaQWGI0SNgte8+4+sHMFtfaBpU0ks+YpbCIkKw0zow0pTLPVoFYvskPI7ieM+bYtO22XpkXUS7oUg==
+"@types/brainhubeu__react-carousel@^1.15.0":
+  version "1.15.0"
+  resolved "https://registry.yarnpkg.com/@types/brainhubeu__react-carousel/-/brainhubeu__react-carousel-1.15.0.tgz#8cb1b6b182d9b00f37a0e5b922df4b8f8a690250"
+  integrity sha512-dUwOz4LkUhbqiGH8+ud8L1ygfNZ01Z6lmU0tJkikF51TH/9g14dg6cJE5tLnDCxkpnJm1/0xv0+aRYSsg1xvLg==
   dependencies:
     "@types/react" "*"
 
@@ -2308,7 +2308,7 @@ class-utils@^0.3.5:
     isobject "^3.0.0"
     static-extend "^0.1.1"
 
-classnames@2.2.6, classnames@^2.2.5:
+classnames@2.2.6:
   version "2.2.6"
   resolved "https://registry.yarnpkg.com/classnames/-/classnames-2.2.6.tgz#43935bffdd291f326dad0a205309b38d00f650ce"
   integrity sha512-JR/iSQOSt+LQIWwrwEzJ9uk0xfN3mTVYMwt1Ir5mUcSN6pU+V4zQFFaJsclJbPuAUQH+yfWef6tm7l1quW3C8Q==
@@ -5340,13 +5340,6 @@ react-dom@16.13.1:
     prop-types "^15.6.2"
     scheduler "^0.19.1"
 
-react-easy-swipe@^0.0.21:
-  version "0.0.21"
-  resolved "https://registry.yarnpkg.com/react-easy-swipe/-/react-easy-swipe-0.0.21.tgz#ce9384d576f7a8529dc2ca377c1bf03920bac8eb"
-  integrity sha512-OeR2jAxdoqUMHIn/nS9fgreI5hSpgGoL5ezdal4+oO7YSSgJR8ga+PkYGJrSrJ9MKlPcQjMQXnketrD7WNmNsg==
-  dependencies:
-    prop-types "^15.5.8"
-
 react-input-autosize@^2.2.2:
   version "2.2.2"
   resolved "https://registry.yarnpkg.com/react-input-autosize/-/react-input-autosize-2.2.2.tgz#fcaa7020568ec206bc04be36f4eb68e647c4d8c2"
@@ -5377,15 +5370,6 @@ react-refresh@0.8.3:
   version "0.8.3"
   resolved "https://registry.yarnpkg.com/react-refresh/-/react-refresh-0.8.3.tgz#721d4657672d400c5e3c75d063c4a85fb2d5d68f"
   integrity sha512-X8jZHc7nCMjaCqoU+V2I0cOhNW+QMBwSUkeXnTi8IPe6zaRWfn60ZzvFDZqWPfmSJfjub7dDW1SP0jaHWLu/hg==
-
-react-responsive-carousel@^3.2.11:
-  version "3.2.11"
-  resolved "https://registry.yarnpkg.com/react-responsive-carousel/-/react-responsive-carousel-3.2.11.tgz#4c561339ab9daf6aefd43f0858b7aea65db7291b"
-  integrity sha512-Nl/vZpH2V3STFreApsty9/MLjuMxIwIftZyiOyz+ry4TlRkBUo9LQRpGhARvE2USR12rQagRrp/AwueGJGuS5g==
-  dependencies:
-    classnames "^2.2.5"
-    prop-types "^15.5.8"
-    react-easy-swipe "^0.0.21"
 
 react-select@^3.1.0:
   version "3.1.0"

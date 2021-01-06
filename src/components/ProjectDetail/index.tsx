@@ -4,9 +4,6 @@ import styled from 'styled-components';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 /*import { Carousel } from 'react-responsive-carousel';*/
 
-import Carousel from '@brainhubeu/react-carousel';
-import '@brainhubeu/react-carousel/lib/style.css';
-
 import { Card } from '@paljs/ui/Card';
 import { EvaIcon } from '@paljs/ui/Icon';
 import Container from '@paljs/ui/Container';
@@ -14,6 +11,7 @@ import Row from '@paljs/ui/Row';
 import Col from '@paljs/ui/Col';
 import CompanyCard from './CompanyCard';
 import ProjectStateCard from './ProjectStateCard';
+import ProjectCarousel from './ProjectCarousel';
 
 const DetailStyle = styled.div`
   a {
@@ -49,18 +47,6 @@ const DetailInformationStyle = styled.div`
   }
 `;
 
-/*
-const CardDescriptionStyle = styled.div`
-  margin: 1rem 1rem;
-  height: 4.2rem;
-  font-size: 16px;
-  line-height: 20px;
-  overflow: hidden;
-  display: -webkit-box;
-  -webkit-line-clamp: 3;
-  -webkit-box-orient: vertical;
-`;
-*/
 const DetailHeaderStyle = styled.div`
   margin 1rem auto;
   text-align: center;
@@ -128,11 +114,7 @@ const ProjectDetail: React.FC<ProjectDetailProps> = ({ project }) => {
           <Col breakPoint={{ xs: 12, is: 12, sm: 12, md: 7, lg: 8 }}>
             <DetailInformationStyle>
               <DetailCarouselStyle>
-                <Carousel plugins={['arrows', 'dots']}>
-                  {project.images.map((src: string, index: number) => {
-                    return <img key={index} src={src} />;
-                  })}
-                </Carousel>
+                <ProjectCarousel images={project.images} />
               </DetailCarouselStyle>
               <DetailTextStyle> {project.description} </DetailTextStyle>
             </DetailInformationStyle>
