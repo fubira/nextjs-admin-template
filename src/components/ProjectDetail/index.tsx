@@ -116,7 +116,7 @@ const ProjectDetail: React.FC<ProjectDetailProps> = ({ project }) => {
 
       <Container>
         <Row>
-          <Col breakPoint={{ xs: 12, is: 12, sm: 12, md: 8 }}>
+          <Col breakPoint={{ xs: 12, is: 12, sm: 12, md: 7, lg: 8 }}>
             <DetailInformationStyle>
               <DetailCarouselStyle>
                 <Carousel autoPlay showStatus={false} swipeable={false} interval={10000}>
@@ -128,7 +128,7 @@ const ProjectDetail: React.FC<ProjectDetailProps> = ({ project }) => {
               <DetailTextStyle> {project.description} </DetailTextStyle>
             </DetailInformationStyle>
           </Col>
-          <Col breakPoint={{ xs: 12, sm: 12, md: 4 }}>
+          <Col breakPoint={{ xs: 12, sm: 12, md: 5, lg: 4 }}>
             <ProjectStateCard project={project} />
           </Col>
         </Row>
@@ -136,8 +136,8 @@ const ProjectDetail: React.FC<ProjectDetailProps> = ({ project }) => {
 
       <Container>
         <Row>
-          <Col breakPoint={{ xs: 12, md: 8 }}> {CardDetailDocuments} </Col>
-          <Col breakPoint={{ xs: 12, md: 4 }}>
+          <Col breakPoint={{ xs: 12, md: 7, lg: 8 }}> {CardDetailDocuments} </Col>
+          <Col breakPoint={{ xs: 12, md: 5, lg: 4 }}>
             <CompanyCard company={project.company} />
           </Col>
         </Row>
