@@ -2,8 +2,6 @@ import React from 'react';
 import styled from 'styled-components';
 import { GetServerSideProps, InferGetServerSidePropsType } from 'next';
 
-import Container from '@paljs/ui/Container';
-
 import PageLayout from 'layouts/PageLayout';
 import ProjectDetail from 'components/ProjectDetail/index';
 
@@ -34,9 +32,7 @@ export default function Project(props: InferGetServerSidePropsType<typeof getSer
   return (
     <PageLayout title="Landing">
       <ContainerContentStyle>
-        <Container>
-          <ProjectDetail project={props.project} />
-        </Container>
+        <ProjectDetail project={props.project} />
       </ContainerContentStyle>
     </PageLayout>
   );

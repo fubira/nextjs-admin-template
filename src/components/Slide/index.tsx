@@ -26,7 +26,8 @@ const SlideStyle = styled.div`
     padding: 4px;
   }
   .carousel .thumbs-wrapper {
-    margin: 1rem;
+    padding: 1rem;
+    margin: 0;
   }
 `;
 
