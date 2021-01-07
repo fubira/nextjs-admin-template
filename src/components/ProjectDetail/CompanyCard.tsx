@@ -23,6 +23,7 @@ const CardCompanyUserStyle = styled.div`
 interface CompanyCardProps {
   className?: string;
   company: {
+    avatar: string | number;
     name: string;
     description: string;
     image: string;
@@ -30,10 +31,12 @@ interface CompanyCardProps {
 }
 
 const CompanyCard: React.FC<CompanyCardProps> = ({ className, company }) => {
+  const avatarUrl = typeof company.avatar == 'number' ? `url('/avatar/avatar-${company.avatar}.png')` : company.avatar;
+
   return (
     <Card className={className}>
       <CardCompanyUserStyle>
-        <User image="url('/avatar/avatar-15.png')" color="#440088" shape="Round" size="Giant" name={company.name} />
+        <User image={avatarUrl} color="#440088" shape="Round" size="Giant" name={company.name} />
       </CardCompanyUserStyle>
       <CardCompanyInfoStyle>
         <p>{company.description}</p>

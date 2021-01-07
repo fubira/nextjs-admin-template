@@ -1,20 +1,82 @@
-const MockData = [
+export const CompanyMockData = [
+  {
+    id: '000',
+    name: '株式会社ガジェットカンパニージャパン',
+    image: '',
+    avatar: 15,
+    location: '日本',
+    description: '主にハードウエアやソフトウエアを開発・販売している会社です。的な説明文',
+    social: {
+      tiwtter: '',
+      facebook: '',
+      instagram: '',
+      github: '',
+    },
+  },
+  {
+    id: '001',
+    image: '',
+    avatar: 16,
+    name: '株式会社かきくけこ',
+    location: '日本',
+    description: '会社説明文です。',
+    social: {
+      tiwtter: '',
+      facebook: '',
+      instagram: '',
+      github: '',
+    },
+  },
+  {
+    id: '002',
+    image: '',
+    avatar: 17,
+    name: '株式会社さしすせそ',
+    location: '日本',
+    description: '会社説明文です。',
+    social: {
+      tiwtter: '',
+      facebook: '',
+      instagram: '',
+      github: '',
+    },
+  },
+  {
+    id: '003',
+    image: '',
+    avatar: 18,
+    name: '株式会社たちつてと',
+    location: '日本',
+    description: '会社説明文です。',
+    social: {
+      tiwtter: '',
+      facebook: '',
+      instagram: '',
+      github: '',
+    },
+  },
+];
+
+export const UserMockData = {
+  id: '003',
+  image: '',
+  avatar: 18,
+  name: '株式会社たちつてと',
+  location: '日本',
+  description: '会社説明文です。',
+  social: {
+    tiwtter: '',
+    facebook: '',
+    instagram: '',
+    github: '',
+  },
+};
+
+export const ProjectMockData = [
   {
     id: '1',
     title: 'プロジェクトタイトル：新世代のスマートウォッチ',
-    company: {
-      companyId: '000',
-      image: '',
-      name: '株式会社ガジェットカンパニージャパン',
-      location: '日本',
-      description: '主にハードウエアやソフトウエアを開発・販売している会社です。的な説明文',
-      social: {
-        tiwtter: '',
-        facebook: '',
-        instagram: '',
-        github: '',
-      },
-    },
+    company: { ...CompanyMockData[0] },
     topImage:
       'https://images.unsplash.com/photo-1519335553051-96f1218cd5fa?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=320&ixlib=rb-1.2.1&q=80&w=480',
     images: [
@@ -77,19 +139,7 @@ const MockData = [
   {
     id: '2',
     title: 'プロジェクト2',
-    company: {
-      companyId: '001',
-      image: '',
-      name: '株式会社かきくけこ',
-      location: '日本',
-      description: '会社説明文です。',
-      social: {
-        tiwtter: '',
-        facebook: '',
-        instagram: '',
-        github: '',
-      },
-    },
+    company: { ...CompanyMockData[1] },
     topImage:
       'https://images.unsplash.com/photo-1521120413309-42e7eada0334?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=320&ixlib=rb-1.2.1&q=80&w=480',
     images: [
@@ -133,19 +183,7 @@ const MockData = [
   {
     id: '3',
     title: 'プロジェクト3',
-    company: {
-      companyId: '001',
-      image: '',
-      name: '株式会社さしすせそ',
-      location: '日本',
-      description: '会社説明文です。',
-      social: {
-        tiwtter: '',
-        facebook: '',
-        instagram: '',
-        github: '',
-      },
-    },
+    company: { ...CompanyMockData[2] },
     image:
       'https://images.unsplash.com/photo-1542751110-97427bbecf20?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=320&ixlib=rb-1.2.1&q=80&w=480',
     images: [
@@ -188,41 +226,7 @@ const MockData = [
   {
     id: '4',
     title: 'プロジェクト4',
-    company: {
-      companyId: '001',
-      image: '',
-      name: '株式会社たちつてと',
-      location: '日本',
-      description: '会社説明文です。',
-      social: {
-        tiwtter: '',
-        facebook: '',
-        instagram: '',
-        github: '',
-      },
-      details: [
-        {
-          image: '',
-          html: '詳細説明１',
-        },
-        {
-          image: '',
-          html: '詳細説明２',
-        },
-        {
-          image: '',
-          html: '詳細説明３',
-        },
-        {
-          image: '',
-          html: '詳細説明４',
-        },
-        {
-          image: '',
-          html: '詳細説明５',
-        },
-      ],
-    },
+    company: { ...CompanyMockData[3] },
     image:
       'https://images.unsplash.com/photo-1542751110-97427bbecf20?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=320&ixlib=rb-1.2.1&q=80&w=480',
     images: [
@@ -264,5 +268,3 @@ const MockData = [
     ],
   },
 ];
-
-export default MockData;

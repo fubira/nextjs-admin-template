@@ -9,6 +9,7 @@ import { Button } from '@paljs/ui/Button';
 import { EvaIcon } from '@paljs/ui/Icon';
 
 import Progress from 'components/Progress';
+import CommitModal from './CommitModal';
 
 const ProjectStateCardStyle = styled.div`
   margin: 0.8rem;
@@ -51,6 +52,7 @@ interface CompanyCardProps {
   className?: string;
   project: {
     images: [];
+    title: string;
     description: string;
     status: {
       supporter: number;
@@ -64,9 +66,25 @@ interface CompanyCardProps {
 
 const ProjectStateCard: React.FC<CompanyCardProps> = ({ className, project }) => {
   const [favorite, setFavorite] = useState(false);
+  const [visible, setVisible] = useState(false);
   const onClickHandler = () => {
     console.log('onClick', favorite);
     setFavorite(!favorite);
+  };
+  const onShow = () => {
+    setVisible(true);
+  };
+  const onHide = () => {
+    setVisible(false);
+    console.log('onHide', visible);
+  };
+  const onCommit = () => {
+    setVisible(false);
+    console.log('onHide', visible);
+  };
+  const onCancel = () => {
+    setVisible(false);
+    console.log('onHide', visible);
   };
 
   const FavButton = (prop: { favorite: boolean }) =>
@@ -140,7 +158,7 @@ const ProjectStateCard: React.FC<CompanyCardProps> = ({ className, project }) =>
         <Row className="row">
           <Col breakPoint={{ xs: 12 }}>
             <LineStyle>
-              <Button fullWidth status="Primary" size="Giant">
+              <Button fullWidth status="Primary" size="Giant" onClick={onShow}>
                 <ButtonTextStyle>
                   プロジェクトを支援する
                   <EvaIcon name="chevron-right" />
@@ -154,6 +172,9 @@ const ProjectStateCard: React.FC<CompanyCardProps> = ({ className, project }) =>
             </LineStyle>
           </Col>
         </Row>
+        <CommitModal visible={visible} project={project} onHide={onHide} onCommit={onCommit} onCancel={onCancel}>
+          <p>dialog</p>
+        </CommitModal>
       </ProjectStateCardStyle>
     </Card>
   );
