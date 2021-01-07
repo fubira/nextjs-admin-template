@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
 import styled from 'styled-components';
-import Carousel, { Dots } from '@brainhubeu/react-carousel';
-import '@brainhubeu/react-carousel/lib/style.css';
+
+import { Carousel } from 'react-responsive-carousel';
+import 'react-responsive-carousel/lib/styles/carousel.css';
 
 interface ProjectCarouselProps {
   className?: string;
@@ -9,34 +10,23 @@ interface ProjectCarouselProps {
 }
 
 const CarouselStyle = styled.div`
+  width: 100%;
+  img {
+    width: 100%;
+    object-fit: cover;
+  }
   .thumbnail {
   }
 `;
 
-const ThumbnailImage = styled.img`
-  width: 72px;
-`;
-
 const ProjectCarousel: React.FC<ProjectCarouselProps> = ({ className, images }) => {
-  const [value, setValue] = useState(0);
-  const onChange = (value: number) => {
-    setValue(value);
-  };
-
   return (
     <CarouselStyle className={className}>
-      <Carousel arrows infinite value={value} onChange={onChange}>
+      <Carousel showArrows showStatus={false} showIndicators={false}>
         {images.map((src: string, index: number) => {
           return <img key={index} src={src} />;
         })}
       </Carousel>
-      <Dots
-        thumbnails={images.map((src: string, index: number) => {
-          return <ThumbnailImage key={index} className="thumbnail" src={src} />;
-        })}
-        value={value}
-        onChange={onChange}
-      />
     </CarouselStyle>
   );
 };
