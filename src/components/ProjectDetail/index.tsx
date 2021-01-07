@@ -8,7 +8,7 @@ import Row from '@paljs/ui/Row';
 import Col from '@paljs/ui/Col';
 import CompanyCard from './CompanyCard';
 import ProjectStateCard from './ProjectStateCard';
-import ProjectCarousel from './ProjectCarousel';
+import Slide from '../Slide';
 
 const DetailStyle = styled.div`
   a {
@@ -16,45 +16,18 @@ const DetailStyle = styled.div`
   }
 `;
 
-const DetailCarouselStyle = styled.div`
-  display: inline-block;
-  width: 100%;
-  .carousel .slide {
-    padding: 0;
-  }
-  .carousel .thumbs-wrapper {
-    margin: 0;
-  }
-`;
-
-const DetailInformationStyle = styled.div`
-  .icon {
-    margin-right: 0.2rem;
-  }
-  .time {
-    display: flex;
-    position: absolute;
-    left: 1.8rem;
-  }
-
-  .money {
-    display: flex;
-    position: absolute;
-    right: 1.8rem;
-  }
-`;
-
-const DetailHeaderStyle = styled.div`
+const ProjectHeaderStyle = styled.div`
   margin 1rem auto;
   text-align: center;
 `;
 
-const DetailCompanyStyle = styled.div`
+const ProjectHeaderNoteStyle = styled.div`
   display: inline-flex;
   align-items: center;
   color: #888;
   margin: 0 1rem 1rem;
 `;
+
 const DetailTextStyle = styled.div`
   margin: 1rem 1rem 2rem;
 
@@ -85,36 +58,26 @@ const ProjectDetail: React.FC<ProjectDetailProps> = ({ project }) => {
       </Card>
     );
   });
-  /*
-                <Carousel autoPlay showStatus={false} swipeable={false} interval={10000}>
-                  {project.images.map((src: string, index: number) => {
-                    return <img key={index} src={src} />;
-                  })}
-                </Carousel>
-  */
+
   return (
     <DetailStyle>
       <Container>
         <Row>
-          <DetailHeaderStyle>
+          <ProjectHeaderStyle>
             <h1>{project.title}</h1>
-            <DetailCompanyStyle>
+            <ProjectHeaderNoteStyle>
               <EvaIcon name="person"></EvaIcon>
               {project.company.name}
-            </DetailCompanyStyle>
-          </DetailHeaderStyle>
+            </ProjectHeaderNoteStyle>
+          </ProjectHeaderStyle>
         </Row>
       </Container>
 
       <Container>
         <Row>
           <Col breakPoint={{ xs: 12, is: 12, sm: 12, md: 7, lg: 8 }}>
-            <DetailInformationStyle>
-              <DetailCarouselStyle>
-                <ProjectCarousel images={project.images} />
-              </DetailCarouselStyle>
-              <DetailTextStyle> {project.description} </DetailTextStyle>
-            </DetailInformationStyle>
+            <Slide images={project.images} />
+            <DetailTextStyle> {project.description} </DetailTextStyle>
           </Col>
           <Col breakPoint={{ xs: 12, sm: 12, md: 5, lg: 4 }}>
             <ProjectStateCard project={project} />

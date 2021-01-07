@@ -30,7 +30,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
 };
 
 export default function Project(props: InferGetServerSidePropsType<typeof getServerSideProps>) {
-  console.log(props);
+  // console.log(props);
   return (
     <PageLayout title="Landing">
       <ContainerContentStyle>
